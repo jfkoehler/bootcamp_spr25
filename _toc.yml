@@ -1,0 +1,71 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: syllabus
+parts:
+  - caption: Introduction to Python
+    chapters:
+    - file: data-types
+    - file: iteration
+    - file: functions
+#     - file: intro_to_git_and_github       
+#   - caption: Introduction to Predictive Modeling
+#     chapters:
+#     - file: regression_intro
+#     - file: practice_regression
+#     - file: polynomial_models
+#     - file: knn_crossval
+# #     - file: knn_classification
+#     - file: logistic_starter_code
+#     - file: classifier_evaluation_b
+# #     - file: transformers_pipelines_review
+# #     - file: cross_val_and_grid_searching
+#     - file: intro_decision_tree  
+#     - file: forests
+# #   - caption: Advanced Models
+# #     chapters:
+# #     - file: advanced_models
+# #     - file: nlp-starter
+#   - caption: Time Series Models
+#     chapters:
+#     - file: time_series_I
+#     - file: forecasting_I
+# #     - file: arima_models
+# #     - file: intro_ann
+# #     - file: cnn_intro_pytorch_clean
+#   - caption: Intro to Artificial Neural Networks
+#     chapters:
+#     - file: intro_to_ann
+#     - file: v2_rnn_text
+
+#   - caption: Deploying Models
+#     chapters:
+#     - file: streamlit
+
+#   - caption: Unsupervised Learning
+#     chapters:
+#     - file: unsupervised_learning
+  - caption: In Class Exercises
+    chapters:
+    - file: exercises/exercises-class_1
+
+  - caption: Homework
+    chapters:
+    - file: homeworks/homework_I
+  #   - file: homework/homework_II
+  #   - file: homework/homework_III
+  #   - file: homework/homework_IV
+  #   - file: homework/regression_hw
+  #   - file: homework/time_series_hw
+    
+  # - caption: Extra Problems
+  #   chapters: 
+  #   - file: numpy-challenge-1
+  #   - file: numpy-challenge-2
+  #   - file: numpy-challenge-3
+  #   - file: bonus/Bonus_Plotting_with_bokeh
+  #   - file: bonus/Bonus_Plotly
+  #   - file: bonus/intro_ipywidgets
+    
+ 
