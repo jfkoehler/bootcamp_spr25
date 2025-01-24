@@ -25,7 +25,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/jfkoehler/nyu_bootcamp_fa24/
+  url: https://github.com/jfkoehler/bootcamp_spr25/
 html:
   use_repository_button: true
 
