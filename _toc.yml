@@ -9,6 +9,7 @@ parts:
     - file: data-types
     - file: iteration
     - file: functions_intro_pandas
+    - file: pandas_II
 #     - file: intro_to_git_and_github       
 #   - caption: Introduction to Predictive Modeling
 #     chapters:
