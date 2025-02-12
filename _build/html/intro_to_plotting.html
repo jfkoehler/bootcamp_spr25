@@ -480,148 +480,16 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read in the sales data</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;data/product_sales.csv&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/jfkoehler/bootcamp_spr25/refs/heads/main/data/product_sales.csv&#39;</span>
 
 <span class="c1">#read_csv</span>
-<span class="n">aapl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">aapl</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>product_title</th>
-      <th>product_vendor</th>
-      <th>product_type</th>
-      <th>product_price</th>
-      <th>day</th>
-      <th>week</th>
-      <th>month</th>
-      <th>quarter</th>
-      <th>year</th>
-      <th>net_quantity</th>
-      <th>gross_sales</th>
-      <th>discounts</th>
-      <th>returns</th>
-      <th>net_sales</th>
-      <th>taxes</th>
-      <th>total_sales</th>
-      <th>total_cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Yerba</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>3.0</td>
-      <td>2023-03-21</td>
-      <td>2023-W12</td>
-      <td>2023-03</td>
-      <td>2023-01</td>
-      <td>2023</td>
-      <td>10</td>
-      <td>30.0</td>
-      <td>-0.6</td>
-      <td>0.0</td>
-      <td>29.4</td>
-      <td>2.36</td>
-      <td>31.76</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Yerba</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>3.0</td>
-      <td>2023-05-24</td>
-      <td>2023-W21</td>
-      <td>2023-05</td>
-      <td>2023-04</td>
-      <td>2023</td>
-      <td>8</td>
-      <td>24.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>24.0</td>
-      <td>1.92</td>
-      <td>25.92</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Yerba</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>3.0</td>
-      <td>2023-02-26</td>
-      <td>2023-W08</td>
-      <td>2023-02</td>
-      <td>2023-01</td>
-      <td>2023</td>
-      <td>8</td>
-      <td>24.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>24.0</td>
-      <td>1.92</td>
-      <td>25.92</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aapl</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 4108 entries, 0 to 4107
-Data columns (total 17 columns):
- #   Column          Non-Null Count  Dtype  
----  ------          --------------  -----  
- 0   product_title   4108 non-null   object 
- 1   product_vendor  3305 non-null   object 
- 2   product_type    249 non-null    object 
- 3   product_price   4108 non-null   float64
- 4   day             4108 non-null   object 
- 5   week            4108 non-null   object 
- 6   month           4108 non-null   object 
- 7   quarter         4108 non-null   object 
- 8   year            4108 non-null   int64  
- 9   net_quantity    4108 non-null   int64  
- 10  gross_sales     4108 non-null   float64
- 11  discounts       4108 non-null   float64
- 12  returns         4108 non-null   float64
- 13  net_sales       4108 non-null   float64
- 14  taxes           4108 non-null   float64
- 15  total_sales     4108 non-null   float64
- 16  total_cost      4108 non-null   float64
-dtypes: float64(8), int64(2), object(7)
-memory usage: 545.7+ KB
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#info</span>
 </pre></div>
 </div>
 </div>
@@ -629,37 +497,6 @@ memory usage: 545.7+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert to datetime</span>
-<span class="n">aapl</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">aapl</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">])</span>
-<span class="n">aapl</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 4108 entries, 0 to 4107
-Data columns (total 18 columns):
- #   Column          Non-Null Count  Dtype         
----  ------          --------------  -----         
- 0   product_title   4108 non-null   object        
- 1   product_vendor  3305 non-null   object        
- 2   product_type    249 non-null    object        
- 3   product_price   4108 non-null   float64       
- 4   day             4108 non-null   object        
- 5   week            4108 non-null   object        
- 6   month           4108 non-null   object        
- 7   quarter         4108 non-null   object        
- 8   year            4108 non-null   int64         
- 9   net_quantity    4108 non-null   int64         
- 10  gross_sales     4108 non-null   float64       
- 11  discounts       4108 non-null   float64       
- 12  returns         4108 non-null   float64       
- 13  net_sales       4108 non-null   float64       
- 14  taxes           4108 non-null   float64       
- 15  total_sales     4108 non-null   float64       
- 16  total_cost      4108 non-null   float64       
- 17  Date            4108 non-null   datetime64[ns]
-dtypes: datetime64[ns](1), float64(8), int64(2), object(7)
-memory usage: 577.8+ KB
 </pre></div>
 </div>
 </div>
@@ -715,7 +552,7 @@ memory usage: 577.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 2, 12, 16, 12, 55, 926858)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 2, 12, 16, 19, 3, 742518)
 </pre></div>
 </div>
 </div>
@@ -728,7 +565,7 @@ memory usage: 577.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.timedelta(microseconds=6596)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.timedelta(microseconds=8157)
 </pre></div>
 </div>
 </div>
@@ -755,7 +592,7 @@ memory usage: 577.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 2, 19, 16, 12, 55, 943308)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 2, 19, 16, 19, 3, 761318)
 </pre></div>
 </div>
 </div>
@@ -764,7 +601,7 @@ memory usage: 577.8+ KB
 <h4>Problems<a class="headerlink" href="#problems" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ufo_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/jfkoehler/nyu_bootcamp_fa24/refs/heads/main/data/ufo.csv&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ufo_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/jfkoehler/bootcamp_spr25/refs/heads/main/data/ufo.csv&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -907,7 +744,7 @@ memory usage: 10.1 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_7771/3412779598.py:2: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_7860/3412779598.py:2: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
   dow.resample(&#39;M&#39;).mean()
 </pre></div>
 </div>
@@ -994,7 +831,7 @@ memory usage: 10.1 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_7771/2439399997.py:2: FutureWarning: &#39;Q&#39; is deprecated and will be removed in a future version, please use &#39;QE&#39; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_7860/2439399997.py:2: FutureWarning: &#39;Q&#39; is deprecated and will be removed in a future version, please use &#39;QE&#39; instead.
   dow.resample(&#39;Q&#39;).max()
 </pre></div>
 </div>
@@ -1237,7 +1074,7 @@ memory usage: 7.4 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x135e4faa0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12bd0b410&gt;]
 </pre></div>
 </div>
 <img alt="_images/3b9bdaaf100446cb1b49ad733c921c53f73dded0a7726d019daff8c69c7e331a.png" src="_images/3b9bdaaf100446cb1b49ad733c921c53f73dded0a7726d019daff8c69c7e331a.png" />
@@ -1265,7 +1102,7 @@ memory usage: 7.4 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x135ec5490&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13d5db050&gt;]
 </pre></div>
 </div>
 <img alt="_images/3a6fb4b8b4eabe3d950f1dd454ac71454388752b892c4825ca019c121074b74e.png" src="_images/3a6fb4b8b4eabe3d950f1dd454ac71454388752b892c4825ca019c121074b74e.png" />
