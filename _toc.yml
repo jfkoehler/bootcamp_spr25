@@ -10,7 +10,8 @@ parts:
     - file: iteration
     - file: functions_intro_pandas
     - file: pandas_II
-#     - file: intro_to_git_and_github       
+    - file: intro_to_plotting
+    - file: eda_consulting
 #   - caption: Introduction to Predictive Modeling
 #     chapters:
 #     - file: regression_intro
