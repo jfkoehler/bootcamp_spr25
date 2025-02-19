@@ -56,19 +56,19 @@ parts:
   - caption: Homework
     chapters:
     - file: homeworks/homework_I
-  #   - file: homework/homework_II
-  #   - file: homework/homework_III
+    - file: homeworks/homework_II
+    - file: homeworks/homework_III
   #   - file: homework/homework_IV
   #   - file: homework/regression_hw
   #   - file: homework/time_series_hw
     
-  # - caption: Extra Problems
-  #   chapters: 
+  - caption: Extra Problems
+    chapters: 
   #   - file: numpy-challenge-1
   #   - file: numpy-challenge-2
   #   - file: numpy-challenge-3
-  #   - file: bonus/Bonus_Plotting_with_bokeh
+    - file: Bonus_Plotting_with_bokeh
   #   - file: bonus/Bonus_Plotly
-  #   - file: bonus/intro_ipywidgets
+    - file: intro_ipywidgets
     
  
