@@ -12,6 +12,7 @@ parts:
     - file: pandas_II
     - file: intro_to_plotting
     - file: eda_consulting
+    - file: plotting_seaborn
 #   - caption: Introduction to Predictive Modeling
 #     chapters:
 #     - file: regression_intro
