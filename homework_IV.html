@@ -1,0 +1,1147 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API’s and Data Visualization &#8212; Stern Data Bootcamp</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework_IV';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="syllabus.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Stern Data Bootcamp - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Stern Data Bootcamp - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="syllabus.html">
+                    Data Bootcamp
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="data-types.html">Let’s chat about JupyterLab and Juptyer notebooks</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="iteration.html">Iteration and Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions_intro_pandas.html">Functions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="pandas_II.html">Reading Files and Split Apply Combine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_plotting.html"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eda_consulting.html">Retail Consultant Challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting_seaborn.html">More plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="data_apis.html">Accessing Data with API’s</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="html_data.html">Extracting Data From HTML</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="exercises/exercises-class_1.html">Exercise 1: Loud Animals</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="homeworks/homework_I.html">Assignment 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homeworks/homework_III.html">Homework 3: Advanced Pandas and Introductory Plotting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra Problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Bonus_Plotting_with_bokeh.html">Plotting with <code class="docutils literal notranslate"><span class="pre">bokeh</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_ipywidgets.html">Using interactive widgets with the notebook</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jfkoehler/bootcamp_spr25/blob/master/homework_IV.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jfkoehler/bootcamp_spr25" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jfkoehler/bootcamp_spr25/issues/new?title=Issue%20on%20page%20%2Fhomework_IV.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/homework_IV.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>API’s and Data Visualization</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="api-s-and-data-visualization">
+<h1>API’s and Data Visualization<a class="headerlink" href="#api-s-and-data-visualization" title="Link to this heading">#</a></h1>
+<p>This week we introduced working with an API to access data, and some additional plotting functionality through the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> library.  In the assignment, you will use the <code class="docutils literal notranslate"><span class="pre">yfinance</span></code> library to access data and use <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to visualize the data.  Alternatively you can use <code class="docutils literal notranslate"><span class="pre">bokeh</span></code> for an extra challenge.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>NOTE</strong>: Make sure you can load the <code class="docutils literal notranslate"><span class="pre">yfinance</span></code> library – if not uncomment the cell below and run the installation.</p>
+<p><strong>Problem 1</strong></p>
+<p>Make sure to sign up for a new API Key from Alpha Vantage <a class="reference external" href="https://www.alphavantage.co/">here</a>.  Assign this key to the variable <code class="docutils literal notranslate"><span class="pre">api_key</span></code> below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">api_key</span> <span class="o">=</span> <span class="s1">&#39;W000UNOPUW8NNRTA&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problem 2</strong></p>
+<p>Extract the <code class="docutils literal notranslate"><span class="pre">TIME_SERIES_DALY</span></code> for Tesla and GM for years 2019 - present.  Draw side by side line plots using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.  Add appropriate titles and labels, adjust the figure size to <code class="docutils literal notranslate"><span class="pre">(20,</span> <span class="pre">5)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.alphavantage.co/query&#39;</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;apikey&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_stock_data</span><span class="p">(</span><span class="n">symbol</span><span class="p">):</span>
+  <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+      <span class="n">base_url</span><span class="p">,</span>
+      <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+          <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;TIME_SERIES_DAILY&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="n">symbol</span><span class="p">,</span>
+          <span class="s2">&quot;apikey&quot;</span><span class="p">:</span> <span class="n">api_key</span>
+      <span class="p">}</span>
+  <span class="p">)</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+  <span class="k">if</span> <span class="s1">&#39;Time Series (Daily)&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error fetching data for </span><span class="si">{</span><span class="n">symbol</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+  <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Time Series (Daily)&#39;</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+  <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+  <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">tesla_data</span> <span class="o">=</span> <span class="n">get_stock_data</span><span class="p">(</span><span class="s1">&#39;TSLA&#39;</span><span class="p">)</span>
+<span class="n">gm_data</span> <span class="o">=</span> <span class="n">get_stock_data</span><span class="p">(</span><span class="s1">&#39;GM&#39;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">tesla_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">gm_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+  <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tesla_data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">tesla_data</span><span class="p">[</span><span class="s1">&#39;4. close&#39;</span><span class="p">])</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Daily Tesla Stock Price&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Closing Price&#39;</span><span class="p">)</span>
+
+  <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gm_data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">gm_data</span><span class="p">[</span><span class="s1">&#39;4. close&#39;</span><span class="p">])</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Daily GM Stock Price&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Closing Price&#39;</span><span class="p">)</span>
+
+  <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I couldn&#39;t retrieve the data for both companies.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6d7a0b23c48612e2509cee236952376b25307bc74648acb89a8abeef08d6752e.png" src="_images/6d7a0b23c48612e2509cee236952376b25307bc74648acb89a8abeef08d6752e.png" />
+</div>
+</div>
+<p><strong>Problem 3</strong></p>
+<p>Extract the <code class="docutils literal notranslate"><span class="pre">TIME_SERIES_MONTHLY</span></code> for the Home Depot and Lowes.  Create a boxplot using <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> where the <span class="math notranslate nohighlight">\(x\)</span>-axis is the month, and the <span class="math notranslate nohighlight">\(y\)</span>-axis is the closing price of each stock respectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.alphavantage.co/query&#39;</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;TIME_SERIES_MONTHLY&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;apikey&quot;</span><span class="p">:</span> <span class="n">api_key</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_monthly_stock_data</span><span class="p">(</span><span class="n">symbol</span><span class="p">):</span>
+    <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="s2">&quot;https://www.alphavantage.co/query&quot;</span><span class="p">,</span>
+        <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;TIME_SERIES_MONTHLY&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="n">symbol</span><span class="p">,</span>
+            <span class="s2">&quot;apikey&quot;</span><span class="p">:</span> <span class="n">api_key</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="s1">&#39;Monthly Time Series&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error fetching data for </span><span class="si">{</span><span class="n">symbol</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Monthly Time Series&#39;</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;symbol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">symbol</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">hd_data</span> <span class="o">=</span> <span class="n">get_monthly_stock_data</span><span class="p">(</span><span class="s1">&#39;HD&#39;</span><span class="p">)</span>
+<span class="n">low_data</span> <span class="o">=</span> <span class="n">get_monthly_stock_data</span><span class="p">(</span><span class="s1">&#39;LOW&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">hd_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">low_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">combined_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">hd_data</span><span class="p">[[</span><span class="s1">&#39;4. close&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;symbol&#39;</span><span class="p">]],</span>
+                               <span class="n">low_data</span><span class="p">[[</span><span class="s1">&#39;4. close&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;symbol&#39;</span><span class="p">]]])</span>
+    <span class="n">combined_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;4. close&#39;</span><span class="p">:</span> <span class="s1">&#39;Closing Price&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Closing Price&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;symbol&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">combined_data</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Monthly Closing Prices for Home Depot and Lowe</span><span class="se">\&#39;</span><span class="s1">s&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Month&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Closing Price&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Stock Symbol&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not retrieve data for both Home Depot and Lowe&#39;s.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/45f49639fc4d31c8f704f7be1132d6367dce3f05fd22bc79c8fe541aa85573df.png" src="_images/45f49639fc4d31c8f704f7be1132d6367dce3f05fd22bc79c8fe541aa85573df.png" />
+</div>
+</div>
+<p><strong>Problem 4</strong></p>
+<p>Extract the <code class="docutils literal notranslate"><span class="pre">NEWS_SENTIMENT</span></code> for 200 articles related to Tesla stock.  Create a histogram of the sentiment scores from each article.  This boils down to extracting the <code class="docutils literal notranslate"><span class="pre">overall_sentiment_score</span></code> from each entry and plotting the results!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#update the parameters</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.alphavantage.co/query&#39;</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;NEWS_SENTIMENT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tickers&quot;</span><span class="p">:</span> <span class="s2">&quot;TSLA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;topics&quot;</span><span class="p">:</span> <span class="s2">&quot;technology&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s2">&quot;apikey&quot;</span><span class="p">:</span> <span class="n">api_key</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="s1">&#39;feed&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error fetching news sentiment data: </span><span class="si">{</span><span class="n">results</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">sentiment_scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">article</span><span class="p">[</span><span class="s1">&#39;overall_sentiment_score&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;feed&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;overall_sentiment_score&#39;</span> <span class="ow">in</span> <span class="n">article</span><span class="p">]</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sentiment_scores</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sentiment Score Distribution for Tesla News Articles&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Overall Sentiment Score&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e87679f6e6dd7225d922b7df71eb2f5346d86f96abf6a5473336b16a1ebdae01.png" src="_images/e87679f6e6dd7225d922b7df71eb2f5346d86f96abf6a5473336b16a1ebdae01.png" />
+</div>
+</div>
+<p><strong>Problem 5</strong></p>
+<p>Extract data related to retail sales from the last decade.  Create a side by side line plot and a boxplot for each month.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#update the parameters</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.alphavantage.co/query&#39;</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;TIME_SERIES_MONTHLY_ADJUSTED&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;XRT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;apikey&quot;</span><span class="p">:</span> <span class="n">api_key</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="s1">&#39;Monthly Adjusted Time Series&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error fetching retail sales data: </span><span class="si">{</span><span class="n">results</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">retail_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;Monthly Adjusted Time Series&#39;</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+    <span class="n">retail_data</span> <span class="o">=</span> <span class="n">retail_data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">retail_data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">retail_data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+    <span class="n">retail_data</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">retail_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span>
+    <span class="n">retail_data</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">retail_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">retail_data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">retail_data</span><span class="p">[</span><span class="s1">&#39;5. adjusted close&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Adjusted Close&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Retail Sales (Adjusted Close) Over Time&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Adjusted Close&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;5. adjusted close&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">retail_data</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Retail Sales Distribution by Month&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Month&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Adjusted Close&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/43231e94a42904b8d99fc38fe88bf43138af4b80995cd33dea17bc2aeb11822b.png" src="_images/43231e94a42904b8d99fc38fe88bf43138af4b80995cd33dea17bc2aeb11822b.png" />
+</div>
+</div>
+<p><strong>Problem 6</strong></p>
+<p>Extract <code class="docutils literal notranslate"><span class="pre">REAL_GDP_PER_CAPITA</span></code> and fix the data so as to have a datetime index sorted from earliest to latest date.  Create a line plot using seaborn with appropriate labels and titles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.alphavantage.co/query&#39;</span>
+
+<span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;REAL_GDP_PER_CAPITA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;apikey&quot;</span><span class="p">:</span> <span class="n">api_key</span><span class="p">,</span>
+    <span class="s1">&#39;datatype&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="s1">&#39;data&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;Real_GDP_Per_Capita&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Real_GDP_Per_Capita&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Real GDP per Capita Over Time&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Real GDP Per Capita&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: Could not retrieve data&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Real Gross Domestic Product per Capita&#39;, &#39;interval&#39;: &#39;quarterly&#39;, &#39;unit&#39;: &#39;chained 2012 dollars&#39;, &#39;data&#39;: [{&#39;date&#39;: &#39;2024-10-01&#39;, &#39;value&#39;: &#39;68972.0&#39;}, {&#39;date&#39;: &#39;2024-07-01&#39;, &#39;value&#39;: &#39;68696.0&#39;}, {&#39;date&#39;: &#39;2024-04-01&#39;, &#39;value&#39;: &#39;68320.0&#39;}, {&#39;date&#39;: &#39;2024-01-01&#39;, &#39;value&#39;: &#39;67981.0&#39;}, {&#39;date&#39;: &#39;2023-10-01&#39;, &#39;value&#39;: &#39;67858.0&#39;}, {&#39;date&#39;: &#39;2023-07-01&#39;, &#39;value&#39;: &#39;67499.0&#39;}, {&#39;date&#39;: &#39;2023-04-01&#39;, &#39;value&#39;: &#39;66945.0&#39;}, {&#39;date&#39;: &#39;2023-01-01&#39;, &#39;value&#39;: &#39;66673.0&#39;}, {&#39;date&#39;: &#39;2022-10-01&#39;, &#39;value&#39;: &#39;66341.0&#39;}, {&#39;date&#39;: &#39;2022-07-01&#39;, &#39;value&#39;: &#39;65939.0&#39;}, {&#39;date&#39;: &#39;2022-04-01&#39;, &#39;value&#39;: &#39;65631.0&#39;}, {&#39;date&#39;: &#39;2022-01-01&#39;, &#39;value&#39;: &#39;65684.0&#39;}, {&#39;date&#39;: &#39;2021-10-01&#39;, &#39;value&#39;: &#39;65925.0&#39;}, {&#39;date&#39;: &#39;2021-07-01&#39;, &#39;value&#39;: &#39;64850.0&#39;}, {&#39;date&#39;: &#39;2021-04-01&#39;, &#39;value&#39;: &#39;64383.0&#39;}, {&#39;date&#39;: &#39;2021-01-01&#39;, &#39;value&#39;: &#39;63418.0&#39;}, {&#39;date&#39;: &#39;2020-10-01&#39;, &#39;value&#39;: &#39;62544.0&#39;}, {&#39;date&#39;: &#39;2020-07-01&#39;, &#39;value&#39;: &#39;61906.0&#39;}, {&#39;date&#39;: &#39;2020-04-01&#39;, &#39;value&#39;: &#39;57440.0&#39;}, {&#39;date&#39;: &#39;2020-01-01&#39;, &#39;value&#39;: &#39;62415.0&#39;}, {&#39;date&#39;: &#39;2019-10-01&#39;, &#39;value&#39;: &#39;63360.0&#39;}, {&#39;date&#39;: &#39;2019-07-01&#39;, &#39;value&#39;: &#39;63022.0&#39;}, {&#39;date&#39;: &#39;2019-04-01&#39;, &#39;value&#39;: &#39;62385.0&#39;}, {&#39;date&#39;: &#39;2019-01-01&#39;, &#39;value&#39;: &#39;61939.0&#39;}, {&#39;date&#39;: &#39;2018-10-01&#39;, &#39;value&#39;: &#39;61619.0&#39;}, {&#39;date&#39;: &#39;2018-07-01&#39;, &#39;value&#39;: &#39;61622.0&#39;}, {&#39;date&#39;: &#39;2018-04-01&#39;, &#39;value&#39;: &#39;61336.0&#39;}, {&#39;date&#39;: &#39;2018-01-01&#39;, &#39;value&#39;: &#39;61093.0&#39;}, {&#39;date&#39;: &#39;2017-10-01&#39;, &#39;value&#39;: &#39;60674.0&#39;}, {&#39;date&#39;: &#39;2017-07-01&#39;, &#39;value&#39;: &#39;60099.0&#39;}, {&#39;date&#39;: &#39;2017-04-01&#39;, &#39;value&#39;: &#39;59736.0&#39;}, {&#39;date&#39;: &#39;2017-01-01&#39;, &#39;value&#39;: &#39;59494.0&#39;}, {&#39;date&#39;: &#39;2016-10-01&#39;, &#39;value&#39;: &#39;59296.0&#39;}, {&#39;date&#39;: &#39;2016-07-01&#39;, &#39;value&#39;: &#39;59084.0&#39;}, {&#39;date&#39;: &#39;2016-04-01&#39;, &#39;value&#39;: &#39;58787.0&#39;}, {&#39;date&#39;: &#39;2016-01-01&#39;, &#39;value&#39;: &#39;58704.0&#39;}, {&#39;date&#39;: &#39;2015-10-01&#39;, &#39;value&#39;: &#39;58470.0&#39;}, {&#39;date&#39;: &#39;2015-07-01&#39;, &#39;value&#39;: &#39;58486.0&#39;}, {&#39;date&#39;: &#39;2015-04-01&#39;, &#39;value&#39;: &#39;58376.0&#39;}, {&#39;date&#39;: &#39;2015-01-01&#39;, &#39;value&#39;: &#39;58121.0&#39;}, {&#39;date&#39;: &#39;2014-10-01&#39;, &#39;value&#39;: &#39;57702.0&#39;}, {&#39;date&#39;: &#39;2014-07-01&#39;, &#39;value&#39;: &#39;57536.0&#39;}, {&#39;date&#39;: &#39;2014-04-01&#39;, &#39;value&#39;: &#39;56968.0&#39;}, {&#39;date&#39;: &#39;2014-01-01&#39;, &#39;value&#39;: &#39;56345.0&#39;}, {&#39;date&#39;: &#39;2013-10-01&#39;, &#39;value&#39;: &#39;56642.0&#39;}, {&#39;date&#39;: &#39;2013-07-01&#39;, &#39;value&#39;: &#39;56272.0&#39;}, {&#39;date&#39;: &#39;2013-04-01&#39;, &#39;value&#39;: &#39;55914.0&#39;}, {&#39;date&#39;: &#39;2013-01-01&#39;, &#39;value&#39;: &#39;55859.0&#39;}, {&#39;date&#39;: &#39;2012-10-01&#39;, &#39;value&#39;: &#39;55403.0&#39;}, {&#39;date&#39;: &#39;2012-07-01&#39;, &#39;value&#39;: &#39;55454.0&#39;}, {&#39;date&#39;: &#39;2012-04-01&#39;, &#39;value&#39;: &#39;55490.0&#39;}, {&#39;date&#39;: &#39;2012-01-01&#39;, &#39;value&#39;: &#39;55342.0&#39;}, {&#39;date&#39;: &#39;2011-10-01&#39;, &#39;value&#39;: &#39;54979.0&#39;}, {&#39;date&#39;: &#39;2011-07-01&#39;, &#39;value&#39;: &#39;54482.0&#39;}, {&#39;date&#39;: &#39;2011-04-01&#39;, &#39;value&#39;: &#39;54610.0&#39;}, {&#39;date&#39;: &#39;2011-01-01&#39;, &#39;value&#39;: &#39;54341.0&#39;}, {&#39;date&#39;: &#39;2010-10-01&#39;, &#39;value&#39;: &#39;54569.0&#39;}, {&#39;date&#39;: &#39;2010-07-01&#39;, &#39;value&#39;: &#39;54401.0&#39;}, {&#39;date&#39;: &#39;2010-04-01&#39;, &#39;value&#39;: &#39;54100.0&#39;}, {&#39;date&#39;: &#39;2010-01-01&#39;, &#39;value&#39;: &#39;53683.0&#39;}, {&#39;date&#39;: &#39;2009-10-01&#39;, &#39;value&#39;: &#39;53531.0&#39;}, {&#39;date&#39;: &#39;2009-07-01&#39;, &#39;value&#39;: &#39;53081.0&#39;}, {&#39;date&#39;: &#39;2009-04-01&#39;, &#39;value&#39;: &#39;53017.0&#39;}, {&#39;date&#39;: &#39;2009-01-01&#39;, &#39;value&#39;: &#39;53221.0&#39;}, {&#39;date&#39;: &#39;2008-10-01&#39;, &#39;value&#39;: &#39;53941.0&#39;}, {&#39;date&#39;: &#39;2008-07-01&#39;, &#39;value&#39;: &#39;55278.0&#39;}, {&#39;date&#39;: &#39;2008-04-01&#39;, &#39;value&#39;: &#39;55705.0&#39;}, {&#39;date&#39;: &#39;2008-01-01&#39;, &#39;value&#39;: &#39;55497.0&#39;}, {&#39;date&#39;: &#39;2007-10-01&#39;, &#39;value&#39;: &#39;55857.0&#39;}, {&#39;date&#39;: &#39;2007-07-01&#39;, &#39;value&#39;: &#39;55649.0&#39;}, {&#39;date&#39;: &#39;2007-04-01&#39;, &#39;value&#39;: &#39;55474.0&#39;}, {&#39;date&#39;: &#39;2007-01-01&#39;, &#39;value&#39;: &#39;55260.0&#39;}, {&#39;date&#39;: &#39;2006-10-01&#39;, &#39;value&#39;: &#39;55216.0&#39;}, {&#39;date&#39;: &#39;2006-07-01&#39;, &#39;value&#39;: &#39;54886.0&#39;}, {&#39;date&#39;: &#39;2006-04-01&#39;, &#39;value&#39;: &#39;54945.0&#39;}, {&#39;date&#39;: &#39;2006-01-01&#39;, &#39;value&#39;: &#39;54927.0&#39;}, {&#39;date&#39;: &#39;2005-10-01&#39;, &#39;value&#39;: &#39;54317.0&#39;}, {&#39;date&#39;: &#39;2005-07-01&#39;, &#39;value&#39;: &#39;54153.0&#39;}, {&#39;date&#39;: &#39;2005-04-01&#39;, &#39;value&#39;: &#39;53868.0&#39;}, {&#39;date&#39;: &#39;2005-01-01&#39;, &#39;value&#39;: &#39;53719.0&#39;}, {&#39;date&#39;: &#39;2004-10-01&#39;, &#39;value&#39;: &#39;53242.0&#39;}, {&#39;date&#39;: &#39;2004-07-01&#39;, &#39;value&#39;: &#39;52835.0&#39;}, {&#39;date&#39;: &#39;2004-04-01&#39;, &#39;value&#39;: &#39;52469.0&#39;}, {&#39;date&#39;: &#39;2004-01-01&#39;, &#39;value&#39;: &#39;52179.0&#39;}, {&#39;date&#39;: &#39;2003-10-01&#39;, &#39;value&#39;: &#39;51986.0&#39;}, {&#39;date&#39;: &#39;2003-07-01&#39;, &#39;value&#39;: &#39;51512.0&#39;}, {&#39;date&#39;: &#39;2003-04-01&#39;, &#39;value&#39;: &#39;50796.0&#39;}, {&#39;date&#39;: &#39;2003-01-01&#39;, &#39;value&#39;: &#39;50462.0&#39;}, {&#39;date&#39;: &#39;2002-10-01&#39;, &#39;value&#39;: &#39;50302.0&#39;}, {&#39;date&#39;: &#39;2002-07-01&#39;, &#39;value&#39;: &#39;50362.0&#39;}, {&#39;date&#39;: &#39;2002-04-01&#39;, &#39;value&#39;: &#39;50286.0&#39;}, {&#39;date&#39;: &#39;2002-01-01&#39;, &#39;value&#39;: &#39;50091.0&#39;}, {&#39;date&#39;: &#39;2001-10-01&#39;, &#39;value&#39;: &#39;49783.0&#39;}, {&#39;date&#39;: &#39;2001-07-01&#39;, &#39;value&#39;: &#39;49774.0&#39;}, {&#39;date&#39;: &#39;2001-04-01&#39;, &#39;value&#39;: &#39;50105.0&#39;}, {&#39;date&#39;: &#39;2001-01-01&#39;, &#39;value&#39;: &#39;49911.0&#39;}, {&#39;date&#39;: &#39;2000-10-01&#39;, &#39;value&#39;: &#39;50190.0&#39;}, {&#39;date&#39;: &#39;2000-07-01&#39;, &#39;value&#39;: &#39;50024.0&#39;}, {&#39;date&#39;: &#39;2000-04-01&#39;, &#39;value&#39;: &#39;50109.0&#39;}, {&#39;date&#39;: &#39;2000-01-01&#39;, &#39;value&#39;: &#39;49335.0&#39;}, {&#39;date&#39;: &#39;1999-10-01&#39;, &#39;value&#39;: &#39;49281.0&#39;}, {&#39;date&#39;: &#39;1999-07-01&#39;, &#39;value&#39;: &#39;48632.0&#39;}, {&#39;date&#39;: &#39;1999-04-01&#39;, &#39;value&#39;: &#39;48148.0&#39;}, {&#39;date&#39;: &#39;1999-01-01&#39;, &#39;value&#39;: &#39;47880.0&#39;}, {&#39;date&#39;: &#39;1998-10-01&#39;, &#39;value&#39;: &#39;47555.0&#39;}, {&#39;date&#39;: &#39;1998-07-01&#39;, &#39;value&#39;: &#39;46943.0&#39;}, {&#39;date&#39;: &#39;1998-04-01&#39;, &#39;value&#39;: &#39;46504.0&#39;}, {&#39;date&#39;: &#39;1998-01-01&#39;, &#39;value&#39;: &#39;46204.0&#39;}, {&#39;date&#39;: &#39;1997-10-01&#39;, &#39;value&#39;: &#39;45862.0&#39;}, {&#39;date&#39;: &#39;1997-07-01&#39;, &#39;value&#39;: &#39;45616.0&#39;}, {&#39;date&#39;: &#39;1997-04-01&#39;, &#39;value&#39;: &#39;45203.0&#39;}, {&#39;date&#39;: &#39;1997-01-01&#39;, &#39;value&#39;: &#39;44590.0&#39;}, {&#39;date&#39;: &#39;1996-10-01&#39;, &#39;value&#39;: &#39;44421.0&#39;}, {&#39;date&#39;: &#39;1996-07-01&#39;, &#39;value&#39;: &#39;44105.0&#39;}, {&#39;date&#39;: &#39;1996-04-01&#39;, &#39;value&#39;: &#39;43856.0&#39;}, {&#39;date&#39;: &#39;1996-01-01&#39;, &#39;value&#39;: &#39;43259.0&#39;}, {&#39;date&#39;: &#39;1995-10-01&#39;, &#39;value&#39;: &#39;43044.0&#39;}, {&#39;date&#39;: &#39;1995-07-01&#39;, &#39;value&#39;: &#39;42885.0&#39;}, {&#39;date&#39;: &#39;1995-04-01&#39;, &#39;value&#39;: &#39;42660.0&#39;}, {&#39;date&#39;: &#39;1995-01-01&#39;, &#39;value&#39;: &#39;42654.0&#39;}, {&#39;date&#39;: &#39;1994-10-01&#39;, &#39;value&#39;: &#39;42618.0&#39;}, {&#39;date&#39;: &#39;1994-07-01&#39;, &#39;value&#39;: &#39;42264.0&#39;}, {&#39;date&#39;: &#39;1994-04-01&#39;, &#39;value&#39;: &#39;42154.0&#39;}, {&#39;date&#39;: &#39;1994-01-01&#39;, &#39;value&#39;: &#39;41713.0&#39;}, {&#39;date&#39;: &#39;1993-10-01&#39;, &#39;value&#39;: &#39;41423.0&#39;}, {&#39;date&#39;: &#39;1993-07-01&#39;, &#39;value&#39;: &#39;40997.0&#39;}, {&#39;date&#39;: &#39;1993-04-01&#39;, &#39;value&#39;: &#39;40942.0&#39;}, {&#39;date&#39;: &#39;1993-01-01&#39;, &#39;value&#39;: &#39;40829.0&#39;}, {&#39;date&#39;: &#39;1992-10-01&#39;, &#39;value&#39;: &#39;40881.0&#39;}, {&#39;date&#39;: &#39;1992-07-01&#39;, &#39;value&#39;: &#39;40599.0&#39;}, {&#39;date&#39;: &#39;1992-04-01&#39;, &#39;value&#39;: &#39;40350.0&#39;}, {&#39;date&#39;: &#39;1992-01-01&#39;, &#39;value&#39;: &#39;40051.0&#39;}, {&#39;date&#39;: &#39;1991-10-01&#39;, &#39;value&#39;: &#39;39694.0&#39;}, {&#39;date&#39;: &#39;1991-07-01&#39;, &#39;value&#39;: &#39;39691.0&#39;}, {&#39;date&#39;: &#39;1991-04-01&#39;, &#39;value&#39;: &#39;39632.0&#39;}, {&#39;date&#39;: &#39;1991-01-01&#39;, &#39;value&#39;: &#39;39451.0&#39;}, {&#39;date&#39;: &#39;1990-10-01&#39;, &#39;value&#39;: &#39;39759.0&#39;}, {&#39;date&#39;: &#39;1990-07-01&#39;, &#39;value&#39;: &#39;40266.0&#39;}, {&#39;date&#39;: &#39;1990-04-01&#39;, &#39;value&#39;: &#39;40382.0&#39;}, {&#39;date&#39;: &#39;1990-01-01&#39;, &#39;value&#39;: &#39;40361.0&#39;}, {&#39;date&#39;: &#39;1989-10-01&#39;, &#39;value&#39;: &#39;40015.0&#39;}, {&#39;date&#39;: &#39;1989-07-01&#39;, &#39;value&#39;: &#39;40046.0&#39;}, {&#39;date&#39;: &#39;1989-04-01&#39;, &#39;value&#39;: &#39;39861.0&#39;}, {&#39;date&#39;: &#39;1989-01-01&#39;, &#39;value&#39;: &#39;39648.0&#39;}, {&#39;date&#39;: &#39;1988-10-01&#39;, &#39;value&#39;: &#39;39328.0&#39;}, {&#39;date&#39;: &#39;1988-07-01&#39;, &#39;value&#39;: &#39;38908.0&#39;}, {&#39;date&#39;: &#39;1988-04-01&#39;, &#39;value&#39;: &#39;38782.0&#39;}, {&#39;date&#39;: &#39;1988-01-01&#39;, &#39;value&#39;: &#39;38359.0&#39;}, {&#39;date&#39;: &#39;1987-10-01&#39;, &#39;value&#39;: &#39;38238.0&#39;}, {&#39;date&#39;: &#39;1987-07-01&#39;, &#39;value&#39;: &#39;37685.0&#39;}, {&#39;date&#39;: &#39;1987-04-01&#39;, &#39;value&#39;: &#39;37454.0&#39;}, {&#39;date&#39;: &#39;1987-01-01&#39;, &#39;value&#39;: &#39;37132.0&#39;}, {&#39;date&#39;: &#39;1986-10-01&#39;, &#39;value&#39;: &#39;36931.0&#39;}, {&#39;date&#39;: &#39;1986-07-01&#39;, &#39;value&#39;: &#39;36822.0&#39;}, {&#39;date&#39;: &#39;1986-04-01&#39;, &#39;value&#39;: &#39;36563.0&#39;}, {&#39;date&#39;: &#39;1986-01-01&#39;, &#39;value&#39;: &#39;36476.0&#39;}, {&#39;date&#39;: &#39;1985-10-01&#39;, &#39;value&#39;: &#39;36210.0&#39;}, {&#39;date&#39;: &#39;1985-07-01&#39;, &#39;value&#39;: &#39;36033.0&#39;}, {&#39;date&#39;: &#39;1985-04-01&#39;, &#39;value&#39;: &#39;35582.0&#39;}, {&#39;date&#39;: &#39;1985-01-01&#39;, &#39;value&#39;: &#39;35346.0&#39;}, {&#39;date&#39;: &#39;1984-10-01&#39;, &#39;value&#39;: &#39;35072.0&#39;}, {&#39;date&#39;: &#39;1984-07-01&#39;, &#39;value&#39;: &#39;34871.0&#39;}, {&#39;date&#39;: &#39;1984-04-01&#39;, &#39;value&#39;: &#39;34622.0&#39;}, {&#39;date&#39;: &#39;1984-01-01&#39;, &#39;value&#39;: &#39;34103.0&#39;}, {&#39;date&#39;: &#39;1983-10-01&#39;, &#39;value&#39;: &#39;33513.0&#39;}, {&#39;date&#39;: &#39;1983-07-01&#39;, &#39;value&#39;: &#39;32906.0&#39;}, {&#39;date&#39;: &#39;1983-04-01&#39;, &#39;value&#39;: &#39;32340.0&#39;}, {&#39;date&#39;: &#39;1983-01-01&#39;, &#39;value&#39;: &#39;31686.0&#39;}, {&#39;date&#39;: &#39;1982-10-01&#39;, &#39;value&#39;: &#39;31337.0&#39;}, {&#39;date&#39;: &#39;1982-07-01&#39;, &#39;value&#39;: &#39;31402.0&#39;}, {&#39;date&#39;: &#39;1982-04-01&#39;, &#39;value&#39;: &#39;31603.0&#39;}, {&#39;date&#39;: &#39;1982-01-01&#39;, &#39;value&#39;: &#39;31529.0&#39;}, {&#39;date&#39;: &#39;1981-10-01&#39;, &#39;value&#39;: &#39;32095.0&#39;}, {&#39;date&#39;: &#39;1981-07-01&#39;, &#39;value&#39;: &#39;32533.0&#39;}, {&#39;date&#39;: &#39;1981-04-01&#39;, &#39;value&#39;: &#39;32236.0&#39;}, {&#39;date&#39;: &#39;1981-01-01&#39;, &#39;value&#39;: &#39;32550.0&#39;}, {&#39;date&#39;: &#39;1980-10-01&#39;, &#39;value&#39;: &#39;31990.0&#39;}, {&#39;date&#39;: &#39;1980-07-01&#39;, &#39;value&#39;: &#39;31489.0&#39;}, {&#39;date&#39;: &#39;1980-04-01&#39;, &#39;value&#39;: &#39;31621.0&#39;}, {&#39;date&#39;: &#39;1980-01-01&#39;, &#39;value&#39;: &#39;32377.0&#39;}, {&#39;date&#39;: &#39;1979-10-01&#39;, &#39;value&#39;: &#39;32366.0&#39;}, {&#39;date&#39;: &#39;1979-07-01&#39;, &#39;value&#39;: &#39;32386.0&#39;}, {&#39;date&#39;: &#39;1979-04-01&#39;, &#39;value&#39;: &#39;32244.0&#39;}, {&#39;date&#39;: &#39;1979-01-01&#39;, &#39;value&#39;: &#39;32294.0&#39;}, {&#39;date&#39;: &#39;1978-10-01&#39;, &#39;value&#39;: &#39;32318.0&#39;}, {&#39;date&#39;: &#39;1978-07-01&#39;, &#39;value&#39;: &#39;31982.0&#39;}, {&#39;date&#39;: &#39;1978-04-01&#39;, &#39;value&#39;: &#39;31757.0&#39;}, {&#39;date&#39;: &#39;1978-01-01&#39;, &#39;value&#39;: &#39;30653.0&#39;}, {&#39;date&#39;: &#39;1977-10-01&#39;, &#39;value&#39;: &#39;30626.0&#39;}, {&#39;date&#39;: &#39;1977-07-01&#39;, &#39;value&#39;: &#39;30713.0&#39;}, {&#39;date&#39;: &#39;1977-04-01&#39;, &#39;value&#39;: &#39;30254.0&#39;}, {&#39;date&#39;: &#39;1977-01-01&#39;, &#39;value&#39;: &#39;29749.0&#39;}, {&#39;date&#39;: &#39;1976-10-01&#39;, &#39;value&#39;: &#39;29469.0&#39;}, {&#39;date&#39;: &#39;1976-07-01&#39;, &#39;value&#39;: &#39;29335.0&#39;}, {&#39;date&#39;: &#39;1976-04-01&#39;, &#39;value&#39;: &#39;29250.0&#39;}, {&#39;date&#39;: &#39;1976-01-01&#39;, &#39;value&#39;: &#39;29099.0&#39;}, {&#39;date&#39;: &#39;1975-10-01&#39;, &#39;value&#39;: &#39;28520.0&#39;}, {&#39;date&#39;: &#39;1975-07-01&#39;, &#39;value&#39;: &#39;28214.0&#39;}, {&#39;date&#39;: &#39;1975-04-01&#39;, &#39;value&#39;: &#39;27821.0&#39;}, {&#39;date&#39;: &#39;1975-01-01&#39;, &#39;value&#39;: &#39;27690.0&#39;}, {&#39;date&#39;: &#39;1974-10-01&#39;, &#39;value&#39;: &#39;28088.0&#39;}, {&#39;date&#39;: &#39;1974-07-01&#39;, &#39;value&#39;: &#39;28270.0&#39;}, {&#39;date&#39;: &#39;1974-04-01&#39;, &#39;value&#39;: &#39;28613.0&#39;}, {&#39;date&#39;: &#39;1974-01-01&#39;, &#39;value&#39;: &#39;28606.0&#39;}, {&#39;date&#39;: &#39;1973-10-01&#39;, &#39;value&#39;: &#39;28913.0&#39;}, {&#39;date&#39;: &#39;1973-07-01&#39;, &#39;value&#39;: &#39;28711.0&#39;}, {&#39;date&#39;: &#39;1973-04-01&#39;, &#39;value&#39;: &#39;28935.0&#39;}, {&#39;date&#39;: &#39;1973-01-01&#39;, &#39;value&#39;: &#39;28687.0&#39;}, {&#39;date&#39;: &#39;1972-10-01&#39;, &#39;value&#39;: &#39;28055.0&#39;}, {&#39;date&#39;: &#39;1972-07-01&#39;, &#39;value&#39;: &#39;27666.0&#39;}, {&#39;date&#39;: &#39;1972-04-01&#39;, &#39;value&#39;: &#39;27478.0&#39;}, {&#39;date&#39;: &#39;1972-01-01&#39;, &#39;value&#39;: &#39;26932.0&#39;}, {&#39;date&#39;: &#39;1971-10-01&#39;, &#39;value&#39;: &#39;26510.0&#39;}, {&#39;date&#39;: &#39;1971-07-01&#39;, &#39;value&#39;: &#39;26529.0&#39;}, {&#39;date&#39;: &#39;1971-04-01&#39;, &#39;value&#39;: &#39;26394.0&#39;}, {&#39;date&#39;: &#39;1971-01-01&#39;, &#39;value&#39;: &#39;26328.0&#39;}, {&#39;date&#39;: &#39;1970-10-01&#39;, &#39;value&#39;: &#39;25710.0&#39;}, {&#39;date&#39;: &#39;1970-07-01&#39;, &#39;value&#39;: &#39;26079.0&#39;}, {&#39;date&#39;: &#39;1970-04-01&#39;, &#39;value&#39;: &#39;25929.0&#39;}, {&#39;date&#39;: &#39;1970-01-01&#39;, &#39;value&#39;: &#39;25973.0&#39;}, {&#39;date&#39;: &#39;1969-10-01&#39;, &#39;value&#39;: &#39;26076.0&#39;}, {&#39;date&#39;: &#39;1969-07-01&#39;, &#39;value&#39;: &#39;26281.0&#39;}, {&#39;date&#39;: &#39;1969-04-01&#39;, &#39;value&#39;: &#39;26181.0&#39;}, {&#39;date&#39;: &#39;1969-01-01&#39;, &#39;value&#39;: &#39;26162.0&#39;}, {&#39;date&#39;: &#39;1968-10-01&#39;, &#39;value&#39;: &#39;25813.0&#39;}, {&#39;date&#39;: &#39;1968-07-01&#39;, &#39;value&#39;: &#39;25781.0&#39;}, {&#39;date&#39;: &#39;1968-04-01&#39;, &#39;value&#39;: &#39;25652.0&#39;}, {&#39;date&#39;: &#39;1968-01-01&#39;, &#39;value&#39;: &#39;25288.0&#39;}, {&#39;date&#39;: &#39;1967-10-01&#39;, &#39;value&#39;: &#39;24836.0&#39;}, {&#39;date&#39;: &#39;1967-07-01&#39;, &#39;value&#39;: &#39;24719.0&#39;}, {&#39;date&#39;: &#39;1967-04-01&#39;, &#39;value&#39;: &#39;24556.0&#39;}, {&#39;date&#39;: &#39;1967-01-01&#39;, &#39;value&#39;: &#39;24602.0&#39;}, {&#39;date&#39;: &#39;1966-10-01&#39;, &#39;value&#39;: &#39;24446.0&#39;}, {&#39;date&#39;: &#39;1966-07-01&#39;, &#39;value&#39;: &#39;24321.0&#39;}, {&#39;date&#39;: &#39;1966-04-01&#39;, &#39;value&#39;: &#39;24191.0&#39;}, {&#39;date&#39;: &#39;1966-01-01&#39;, &#39;value&#39;: &#39;24172.0&#39;}, {&#39;date&#39;: &#39;1965-10-01&#39;, &#39;value&#39;: &#39;23656.0&#39;}, {&#39;date&#39;: &#39;1965-07-01&#39;, &#39;value&#39;: &#39;23198.0&#39;}, {&#39;date&#39;: &#39;1965-04-01&#39;, &#39;value&#39;: &#39;22770.0&#39;}, {&#39;date&#39;: &#39;1965-01-01&#39;, &#39;value&#39;: &#39;22547.0&#39;}, {&#39;date&#39;: &#39;1964-10-01&#39;, &#39;value&#39;: &#39;22075.0&#39;}, {&#39;date&#39;: &#39;1964-07-01&#39;, &#39;value&#39;: &#39;22085.0&#39;}, {&#39;date&#39;: &#39;1964-04-01&#39;, &#39;value&#39;: &#39;21824.0&#39;}, {&#39;date&#39;: &#39;1964-01-01&#39;, &#39;value&#39;: &#39;21657.0&#39;}, {&#39;date&#39;: &#39;1963-10-01&#39;, &#39;value&#39;: &#39;21276.0&#39;}, {&#39;date&#39;: &#39;1963-07-01&#39;, &#39;value&#39;: &#39;21219.0&#39;}, {&#39;date&#39;: &#39;1963-04-01&#39;, &#39;value&#39;: &#39;20842.0&#39;}, {&#39;date&#39;: &#39;1963-01-01&#39;, &#39;value&#39;: &#39;20677.0&#39;}, {&#39;date&#39;: &#39;1962-10-01&#39;, &#39;value&#39;: &#39;20521.0&#39;}, {&#39;date&#39;: &#39;1962-07-01&#39;, &#39;value&#39;: &#39;20536.0&#39;}, {&#39;date&#39;: &#39;1962-04-01&#39;, &#39;value&#39;: &#39;20366.0&#39;}, {&#39;date&#39;: &#39;1962-01-01&#39;, &#39;value&#39;: &#39;20254.0&#39;}, {&#39;date&#39;: &#39;1961-10-01&#39;, &#39;value&#39;: &#39;19970.0&#39;}, {&#39;date&#39;: &#39;1961-07-01&#39;, &#39;value&#39;: &#39;19670.0&#39;}, {&#39;date&#39;: &#39;1961-04-01&#39;, &#39;value&#39;: &#39;19380.0&#39;}, {&#39;date&#39;: &#39;1961-01-01&#39;, &#39;value&#39;: &#39;19130.0&#39;}, {&#39;date&#39;: &#39;1960-10-01&#39;, &#39;value&#39;: &#39;19065.0&#39;}, {&#39;date&#39;: &#39;1960-07-01&#39;, &#39;value&#39;: &#39;19390.0&#39;}, {&#39;date&#39;: &#39;1960-04-01&#39;, &#39;value&#39;: &#39;19392.0&#39;}, {&#39;date&#39;: &#39;1960-01-01&#39;, &#39;value&#39;: &#39;19614.0&#39;}, {&#39;date&#39;: &#39;1959-10-01&#39;, &#39;value&#39;: &#39;19296.0&#39;}, {&#39;date&#39;: &#39;1959-07-01&#39;, &#39;value&#39;: &#39;19326.0&#39;}, {&#39;date&#39;: &#39;1959-04-01&#39;, &#39;value&#39;: &#39;19395.0&#39;}, {&#39;date&#39;: &#39;1959-01-01&#39;, &#39;value&#39;: &#39;19041.0&#39;}, {&#39;date&#39;: &#39;1958-10-01&#39;, &#39;value&#39;: &#39;18764.0&#39;}, {&#39;date&#39;: &#39;1958-07-01&#39;, &#39;value&#39;: &#39;18419.0&#39;}, {&#39;date&#39;: &#39;1958-04-01&#39;, &#39;value&#39;: &#39;18081.0&#39;}, {&#39;date&#39;: &#39;1958-01-01&#39;, &#39;value&#39;: &#39;18032.0&#39;}, {&#39;date&#39;: &#39;1957-10-01&#39;, &#39;value&#39;: &#39;18582.0&#39;}, {&#39;date&#39;: &#39;1957-07-01&#39;, &#39;value&#39;: &#39;18862.0&#39;}, {&#39;date&#39;: &#39;1957-04-01&#39;, &#39;value&#39;: &#39;18763.0&#39;}, {&#39;date&#39;: &#39;1957-01-01&#39;, &#39;value&#39;: &#39;18881.0&#39;}, {&#39;date&#39;: &#39;1956-10-01&#39;, &#39;value&#39;: &#39;18845.0&#39;}, {&#39;date&#39;: &#39;1956-07-01&#39;, &#39;value&#39;: &#39;18632.0&#39;}, {&#39;date&#39;: &#39;1956-04-01&#39;, &#39;value&#39;: &#39;18736.0&#39;}, {&#39;date&#39;: &#39;1956-01-01&#39;, &#39;value&#39;: &#39;18658.0&#39;}, {&#39;date&#39;: &#39;1955-10-01&#39;, &#39;value&#39;: &#39;18808.0&#39;}, {&#39;date&#39;: &#39;1955-07-01&#39;, &#39;value&#39;: &#39;18787.0&#39;}, {&#39;date&#39;: &#39;1955-04-01&#39;, &#39;value&#39;: &#39;18621.0&#39;}, {&#39;date&#39;: &#39;1955-01-01&#39;, &#39;value&#39;: &#39;18396.0&#39;}, {&#39;date&#39;: &#39;1954-10-01&#39;, &#39;value&#39;: &#39;17960.0&#39;}, {&#39;date&#39;: &#39;1954-07-01&#39;, &#39;value&#39;: &#39;17701.0&#39;}, {&#39;date&#39;: &#39;1954-04-01&#39;, &#39;value&#39;: &#39;17584.0&#39;}, {&#39;date&#39;: &#39;1954-01-01&#39;, &#39;value&#39;: &#39;17636.0&#39;}, {&#39;date&#39;: &#39;1953-10-01&#39;, &#39;value&#39;: &#39;17797.0&#39;}, {&#39;date&#39;: &#39;1953-07-01&#39;, &#39;value&#39;: &#39;18155.0&#39;}, {&#39;date&#39;: &#39;1953-04-01&#39;, &#39;value&#39;: &#39;18341.0&#39;}, {&#39;date&#39;: &#39;1953-01-01&#39;, &#39;value&#39;: &#39;18268.0&#39;}, {&#39;date&#39;: &#39;1952-10-01&#39;, &#39;value&#39;: &#39;18001.0&#39;}, {&#39;date&#39;: &#39;1952-07-01&#39;, &#39;value&#39;: &#39;17509.0&#39;}, {&#39;date&#39;: &#39;1952-04-01&#39;, &#39;value&#39;: &#39;17459.0&#39;}, {&#39;date&#39;: &#39;1952-01-01&#39;, &#39;value&#39;: &#39;17490.0&#39;}, {&#39;date&#39;: &#39;1951-10-01&#39;, &#39;value&#39;: &#39;17375.0&#39;}, {&#39;date&#39;: &#39;1951-07-01&#39;, &#39;value&#39;: &#39;17420.0&#39;}, {&#39;date&#39;: &#39;1951-04-01&#39;, &#39;value&#39;: &#39;17147.0&#39;}, {&#39;date&#39;: &#39;1951-01-01&#39;, &#39;value&#39;: &#39;16922.0&#39;}, {&#39;date&#39;: &#39;1950-10-01&#39;, &#39;value&#39;: &#39;16764.0&#39;}, {&#39;date&#39;: &#39;1950-07-01&#39;, &#39;value&#39;: &#39;16524.0&#39;}, {&#39;date&#39;: &#39;1950-04-01&#39;, &#39;value&#39;: &#39;15977.0&#39;}, {&#39;date&#39;: &#39;1950-01-01&#39;, &#39;value&#39;: &#39;15559.0&#39;}, {&#39;date&#39;: &#39;1949-10-01&#39;, &#39;value&#39;: &#39;15032.0&#39;}, {&#39;date&#39;: &#39;1949-07-01&#39;, &#39;value&#39;: &#39;15228.0&#39;}, {&#39;date&#39;: &#39;1949-04-01&#39;, &#39;value&#39;: &#39;15137.0&#39;}, {&#39;date&#39;: &#39;1949-01-01&#39;, &#39;value&#39;: &#39;15250.0&#39;}, {&#39;date&#39;: &#39;1948-10-01&#39;, &#39;value&#39;: &#39;15530.0&#39;}, {&#39;date&#39;: &#39;1948-07-01&#39;, &#39;value&#39;: &#39;15585.0&#39;}, {&#39;date&#39;: &#39;1948-04-01&#39;, &#39;value&#39;: &#39;15563.0&#39;}, {&#39;date&#39;: &#39;1948-01-01&#39;, &#39;value&#39;: &#39;15371.0&#39;}, {&#39;date&#39;: &#39;1947-10-01&#39;, &#39;value&#39;: &#39;15204.0&#39;}, {&#39;date&#39;: &#39;1947-07-01&#39;, &#39;value&#39;: &#39;15039.0&#39;}, {&#39;date&#39;: &#39;1947-04-01&#39;, &#39;value&#39;: &#39;15139.0&#39;}, {&#39;date&#39;: &#39;1947-01-01&#39;, &#39;value&#39;: &#39;15248.0&#39;}]}
+</pre></div>
+</div>
+<img alt="_images/fb551b9dc3a60f3d06bbfca0130ed6c716bac0b676096d245e01d30fe6baccf6.png" src="_images/fb551b9dc3a60f3d06bbfca0130ed6c716bac0b676096d245e01d30fe6baccf6.png" />
+</div>
+</div>
+<p><strong>Problem 7</strong></p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">yfinance</span></code> library to extract balance sheet data from two companies and determine the better investment using criteria of your choice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ticker_1</span> <span class="o">=</span> <span class="s1">&#39;TSLA&#39;</span>
+<span class="n">ticker_2</span> <span class="o">=</span> <span class="s1">&#39;GM&#39;</span>
+
+<span class="n">company_1</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">Ticker</span><span class="p">(</span><span class="n">ticker_1</span><span class="p">)</span>
+<span class="n">company_2</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">Ticker</span><span class="p">(</span><span class="n">ticker_2</span><span class="p">)</span>
+
+<span class="n">balance_sheet_1</span> <span class="o">=</span> <span class="n">company_1</span><span class="o">.</span><span class="n">balance_sheet</span>
+<span class="n">balance_sheet_2</span> <span class="o">=</span> <span class="n">company_2</span><span class="o">.</span><span class="n">balance_sheet</span>
+
+<span class="n">balance_sheet_1</span> <span class="o">=</span> <span class="n">balance_sheet_1</span><span class="o">.</span><span class="n">T</span>
+<span class="n">balance_sheet_2</span> <span class="o">=</span> <span class="n">balance_sheet_2</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">comparison_criteria</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Total Assets&#39;</span><span class="p">,</span> <span class="s1">&#39;Total Liabilities Net Minority Interest&#39;</span><span class="p">,</span> <span class="s1">&#39;Stockholders Equity&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Balance Sheet for </span><span class="si">{</span><span class="n">ticker_1</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">balance_sheet_1</span><span class="p">[</span><span class="n">comparison_criteria</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Balance Sheet for </span><span class="si">{</span><span class="n">ticker_2</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">balance_sheet_2</span><span class="p">[</span><span class="n">comparison_criteria</span><span class="p">])</span>
+
+<span class="k">if</span> <span class="n">balance_sheet_1</span><span class="p">[</span><span class="s1">&#39;Total Assets&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">balance_sheet_2</span><span class="p">[</span><span class="s1">&#39;Total Assets&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Based on Total Assets, </span><span class="si">{</span><span class="n">ticker_1</span><span class="si">}</span><span class="s2"> is a better investment.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Based on Total Assets, </span><span class="si">{</span><span class="n">ticker_2</span><span class="si">}</span><span class="s2"> is a better investment.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Balance Sheet for TSLA:
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">comparison_criteria</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Total Assets&#39;</span><span class="p">,</span> <span class="s1">&#39;Total Liabilities Net Minority Interest&#39;</span><span class="p">,</span> <span class="s1">&#39;Stockholders Equity&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Balance Sheet for </span><span class="si">{</span><span class="n">ticker_1</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="nb">print</span><span class="p">(</span><span class="n">balance_sheet_1</span><span class="p">[</span><span class="n">comparison_criteria</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Balance Sheet for </span><span class="si">{</span><span class="n">ticker_2</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="nb">print</span><span class="p">(</span><span class="n">balance_sheet_2</span><span class="p">[</span><span class="n">comparison_criteria</span><span class="p">])</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/frame.py:4108,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4106</span>     <span class="k">if</span> <span class="n">is_iterator</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4107</span>         <span class="n">key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">4108</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">_get_indexer_strict</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;columns&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">4110</span> <span class="c1"># take() does not accept boolean indexers</span>
+<span class="g g-Whitespace">   </span><span class="mi">4111</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">indexer</span><span class="p">,</span> <span class="s2">&quot;dtype&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="nb">bool</span><span class="p">:</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:6200,</span> in <span class="ni">Index._get_indexer_strict</span><span class="nt">(self, key, axis_name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6197</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">6198</span>     <span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">new_indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reindex_non_unique</span><span class="p">(</span><span class="n">keyarr</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">6200</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raise_if_missing</span><span class="p">(</span><span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">axis_name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6202</span> <span class="n">keyarr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6203</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">Index</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">6204</span>     <span class="c1"># GH 42790 - Preserve name from an Index</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:6249,</span> in <span class="ni">Index._raise_if_missing</span><span class="nt">(self, key, indexer, axis_name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6247</span> <span class="k">if</span> <span class="n">nmissing</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">6248</span>     <span class="k">if</span> <span class="n">nmissing</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">6249</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;None of [</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">] are in the [</span><span class="si">{</span><span class="n">axis_name</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6251</span>     <span class="n">not_found</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ensure_index</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="n">missing_mask</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="g g-Whitespace">   </span><span class="mi">6252</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">not_found</span><span class="si">}</span><span class="s2"> not in index&quot;</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &quot;None of [Index([&#39;Total Assets&#39;, &#39;Total Liabilities Net Minority Interest&#39;,\n       &#39;Stockholders Equity&#39;],\n      dtype=&#39;object&#39;)] are in the [columns]&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problem 8</strong></p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">yfinance</span></code> library, extract data for five ticker symbols from 2018 through present.  Create a grid of scatterplots with a regression line <a class="reference external" href="http://seaborn.pydata.org/tutorial/regression.html">using seaborns regplot</a> of the different tickers closing prices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tickers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">,</span> <span class="s1">&#39;MSFT&#39;</span><span class="p">,</span> <span class="s1">&#39;TSLA&#39;</span><span class="p">,</span> <span class="s1">&#39;GOOGL&#39;</span><span class="p">,</span> <span class="s1">&#39;AMZN&#39;</span><span class="p">]</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">tickers</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2018-01-01&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2024-10-15&#39;</span><span class="p">)[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Convert the Date column to numeric format (ordinal)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date_ordinal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="o">.</span><span class="n">toordinal</span><span class="p">)</span>
+
+<span class="n">melted_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Date_ordinal&#39;</span><span class="p">],</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;Ticker&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;Closing Price&#39;</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">melted_data</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;Ticker&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">,</span> <span class="s1">&#39;Date_ordinal&#39;</span><span class="p">,</span> <span class="s1">&#39;Closing Price&#39;</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span> <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">})</span>
+
+<span class="c1"># Rotate x-axis labels for better readability</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticks</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+    <span class="c1"># Convert numeric x-axis back to readable dates for display</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="o">.</span><span class="n">fromordinal</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">label</span><span class="p">))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xticks</span><span class="p">()])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%***********************]  5 of 5 completed
+&lt;ipython-input-171-a7a1620e0179&gt;:16: UserWarning: FixedFormatter should only be used together with FixedLocator
+  ax.set_xticklabels(ax.get_xticks(), rotation=45)
+&lt;ipython-input-171-a7a1620e0179&gt;:18: UserWarning: FixedFormatter should only be used together with FixedLocator
+  ax.set_xticklabels([pd.Timestamp.fromordinal(int(label)).strftime(&#39;%Y-%m-%d&#39;) for label in ax.get_xticks()])
+</pre></div>
+</div>
+<img alt="_images/4347954917c51ade82da75e0fa1f49c740e9550997eb4ba010c84711e33e0e42.png" src="_images/4347954917c51ade82da75e0fa1f49c740e9550997eb4ba010c84711e33e0e42.png" />
+</div>
+</div>
+<p><strong>Problem 9</strong></p>
+<p>Read through the documentation on the <code class="docutils literal notranslate"><span class="pre">resample</span></code> method in pandas <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/timeseries.html#resampling">here</a>.  Use the resample method to extract the first closing price of the month for Apple stock since 2012.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apple_data</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;AAPL&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2012-01-01&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2024-10-15&#39;</span><span class="p">)</span>
+
+<span class="c1"># Resample to get the first closing price of each month</span>
+<span class="n">monthly_first_closing</span> <span class="o">=</span> <span class="n">apple_data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">monthly_first_closing</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%***********************]  1 of 1 completed
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+2012-01-31     14.686786
+2012-02-29     16.292500
+2012-03-31     19.445356
+2012-04-30     22.093929
+2012-05-31     20.790358
+                 ...    
+2024-06-30    194.029999
+2024-07-31    216.750000
+2024-08-31    218.360001
+2024-09-30    222.770004
+2024-10-31    226.210007
+Freq: ME, Name: Close, Length: 154, dtype: float64
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-172-ff08ad52597f&gt;:4: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
+  monthly_first_closing = apple_data[&#39;Close&#39;].resample(&#39;M&#39;).first()
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problem 10</strong></p>
+<p>Read through the user guide on the <code class="docutils literal notranslate"><span class="pre">rolling</span></code> methods in pandas <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/window.html#rolling-window">here</a>.  Use this to create side by side line plots of the closing price of NVIDIA stock since 2018 and the rolling 20 day mean for the closing price of NVIDIA.  What effect does the rolling mean have on the plot?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nvidia_data</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;NVDA&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2018-01-01&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2024-10-15&#39;</span><span class="p">)</span>
+<span class="n">nvidia_data</span><span class="p">[</span><span class="s1">&#39;Rolling_20_Mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nvidia_data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nvidia_data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">nvidia_data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Closing Price&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;NVIDIA Closing Price&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Price&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nvidia_data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">nvidia_data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Closing Price&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nvidia_data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">nvidia_data</span><span class="p">[</span><span class="s1">&#39;Rolling_20_Mean&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rolling 20-Day Mean&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;NVIDIA Closing Price with 20-Day Rolling Mean&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Price&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%***********************]  1 of 1 completed
+</pre></div>
+</div>
+<img alt="_images/9e411156f7443786ceec05225a002dadb19e3ffa44932e821c5346eab8ac23d2.png" src="_images/9e411156f7443786ceec05225a002dadb19e3ffa44932e821c5346eab8ac23d2.png" />
+</div>
+</div>
+<p><strong>Problem 11</strong></p>
+<p>arXiv is an open source space for academic papers to be published.  They have a freely accessible API <a class="reference external" href="https://info.arxiv.org/help/api/user-manual.html#arxiv-api-users-manual">here</a>.  In order to parse the responses, you will need to use the BeautifulSoup library and turn the text of the response into a soup object that is then searched.</p>
+<p>Your objective is to write a function that takes in a search term and returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with the article date, title, authors, summary, and article url as columns of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="k">def</span> <span class="nf">arXiv_data</span><span class="p">(</span><span class="n">search_terms</span><span class="p">):</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;http://export.arxiv.org/api/query&#39;</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;search_query&#39;</span><span class="p">:</span> <span class="n">search_terms</span><span class="p">,</span>
+        <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;max_results&#39;</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="p">}</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;xml&#39;</span><span class="p">)</span>
+
+    <span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;entry&#39;</span><span class="p">)]</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">author</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">author</span> <span class="ow">in</span> <span class="n">entry</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;author&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;entry&#39;</span><span class="p">)]</span>
+    <span class="n">summaries</span> <span class="o">=</span> <span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;entry&#39;</span><span class="p">)]</span>
+    <span class="n">published_dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">published</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;entry&#39;</span><span class="p">)]</span>
+    <span class="n">article_urls</span> <span class="o">=</span> <span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;entry&#39;</span><span class="p">)]</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;Title&#39;</span><span class="p">:</span> <span class="n">titles</span><span class="p">,</span>
+        <span class="s1">&#39;Authors&#39;</span><span class="p">:</span> <span class="n">authors</span><span class="p">,</span>
+        <span class="s1">&#39;Summary&#39;</span><span class="p">:</span> <span class="n">summaries</span><span class="p">,</span>
+        <span class="s1">&#39;Published Date&#39;</span><span class="p">:</span> <span class="n">published_dates</span><span class="p">,</span>
+        <span class="s1">&#39;Article URL&#39;</span><span class="p">:</span> <span class="n">article_urls</span>
+    <span class="p">})</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problem 12</strong></p>
+<p>The world bank has a Python wrapper for its api called <code class="docutils literal notranslate"><span class="pre">wbgapi</span></code>.  Examine the documentation <a class="reference external" href="https://pypi.org/project/wbgapi/">here</a> and chose an endpoint(s) to query.  Find at least two endpoints of interest and create visualizations of this data.  Write a sentence or two about what you’ve found.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>wbgapi
+
+<span class="kn">import</span> <span class="nn">wbgapi</span> <span class="k">as</span> <span class="nn">wb</span>
+
+
+<span class="n">gdp_data</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="s1">&#39;NY.GDP.PCAP.KD.ZG&#39;</span><span class="p">,</span> <span class="n">wb</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">members</span><span class="p">(</span><span class="s1">&#39;ECS&#39;</span><span class="p">))</span>
+
+<span class="n">gdp_data</span> <span class="o">=</span> <span class="n">gdp_data</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">gdp_data</span> <span class="o">=</span> <span class="n">gdp_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;economy&#39;</span><span class="p">:</span> <span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;level_1&#39;</span><span class="p">:</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;GDP Growth&#39;</span><span class="p">})</span>
+<span class="n">gdp_data</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_data</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;GDP Growth&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">gdp_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;GDP per Capita Growth in Europe &amp; Central Asia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;GDP Growth Rate (%)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wbgapi in /usr/local/lib/python3.10/dist-packages (1.0.12)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from wbgapi) (2.32.3)
+Requirement already satisfied: PyYAML in /usr/local/lib/python3.10/dist-packages (from wbgapi) (6.0.2)
+Requirement already satisfied: tabulate in /usr/local/lib/python3.10/dist-packages (from wbgapi) (0.8.10)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;wbgapi) (3.4.0)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;wbgapi) (3.10)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;wbgapi) (2.2.3)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;wbgapi) (2024.8.30)
+</pre></div>
+</div>
+<img alt="_images/7aebbbc25fdf1a64085e761bdc483dfd1a2123fcaefd3e6a021c40106a1a5489.png" src="_images/7aebbbc25fdf1a64085e761bdc483dfd1a2123fcaefd3e6a021c40106a1a5489.png" />
+</div>
+</div>
+<p><strong>Problem 13</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">requests</span></code> and <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> to scrape and format the most recent 100 album reviews from <a class="reference external" href="https://pitchfork.com/reviews/albums/">Pitchfork</a>.  Create a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> that includes the album, artist, genre, reviewer, score, and review text for each of these albums. Write your <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file called <code class="docutils literal notranslate"><span class="pre">pitchfork_reviews.csv</span></code>.</p>
+<p><strong>HINT</strong>: An important part of this will be to extract a url to the full review and use it to make another request from which you can pull the score and review text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://pitchfork.com/reviews/albums/&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base_url</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="n">reviews</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;review&#39;</span><span class="p">)</span>
+
+<span class="n">albums</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">artists</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">genres</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">reviewers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">review_texts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">review_urls</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">:</span>
+    <span class="n">album</span> <span class="o">=</span> <span class="n">review</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h2&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;review__title-album&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">artist</span> <span class="o">=</span> <span class="n">review</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;artist-list&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">genre</span> <span class="o">=</span> <span class="n">review</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;genre-list__link&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">review_url</span> <span class="o">=</span> <span class="s1">&#39;https://pitchfork.com&#39;</span> <span class="o">+</span> <span class="n">review</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;review__link&#39;</span><span class="p">)[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
+
+    <span class="n">review_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">review_url</span><span class="p">)</span>
+    <span class="n">review_soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">review_response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+    <span class="n">score</span> <span class="o">=</span> <span class="n">review_soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;score&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">review_text</span> <span class="o">=</span> <span class="n">review_soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;review-detail__abstract&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">reviewer</span> <span class="o">=</span> <span class="n">review_soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;authors-detail__display-name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="n">albums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">album</span><span class="p">)</span>
+    <span class="n">artists</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">artist</span><span class="p">)</span>
+    <span class="n">genres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">genre</span><span class="p">)</span>
+    <span class="n">reviewers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reviewer</span><span class="p">)</span>
+    <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+    <span class="n">review_texts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">review_text</span><span class="p">)</span>
+    <span class="n">review_urls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">review_url</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Album&#39;</span><span class="p">:</span> <span class="n">albums</span><span class="p">,</span>
+    <span class="s1">&#39;Artist&#39;</span><span class="p">:</span> <span class="n">artists</span><span class="p">,</span>
+    <span class="s1">&#39;Genre&#39;</span><span class="p">:</span> <span class="n">genres</span><span class="p">,</span>
+    <span class="s1">&#39;Reviewer&#39;</span><span class="p">:</span> <span class="n">reviewers</span><span class="p">,</span>
+    <span class="s1">&#39;Score&#39;</span><span class="p">:</span> <span class="n">scores</span><span class="p">,</span>
+    <span class="s1">&#39;Review Text&#39;</span><span class="p">:</span> <span class="n">review_texts</span><span class="p">,</span>
+    <span class="s1">&#39;Review URL&#39;</span><span class="p">:</span> <span class="n">review_urls</span>
+<span class="p">})</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;pitchfork_reviews.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problem 14</strong></p>
+<p>Find an api of interest to you.  Ask a specific question that you want to use the data from the api to answer, make an appropriate request of the endpoints and do your best to provide an answer to your question asked.</p>
+<hr class="docutils" />
+<p>For example, maybe I’m interested in finding out recent artists similar to Rod Stewart.  I could use the LastFM api for this.  Perhaps you’re interested in a lyrical analysis of Drake vs. Kendrick Lamar – and want to compare the lexical diversity of different tracks; you can use the genius api for this.  Maybe I want to build an app to show a random cat picture with a dad joke.  The cat api and jokes api might work here.</p>
+<p><strong>Problem 15</strong></p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">praw</span></code> api <a class="reference external" href="https://praw.readthedocs.io/en/stable/">here</a> to extract posts from the <code class="docutils literal notranslate"><span class="pre">r/nyu</span></code> subreddit.  What posts are getting the most activity?</p>
+<p><strong>BONUS</strong></p>
+<p>Using the <a class="reference external" href="https://dog.ceo/dog-api/">Dog API</a>, create a 2 X 5 grid of images of random dogs.  You will need to create subplots and you can use the axes <code class="docutils literal notranslate"><span class="pre">.imshow()</span></code> method.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lenny
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
