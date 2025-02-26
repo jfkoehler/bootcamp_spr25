@@ -13,6 +13,9 @@ parts:
     - file: intro_to_plotting
     - file: eda_consulting
     - file: plotting_seaborn
+    - file: data_apis
+    - file: html_data
+    - file: folium_intro
 #   - caption: Introduction to Predictive Modeling
 #     chapters:
 #     - file: regression_intro
