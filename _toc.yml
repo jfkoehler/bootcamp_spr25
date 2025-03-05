@@ -16,10 +16,10 @@ parts:
     - file: data_apis
     - file: html_data
     - file: folium_intro
-#   - caption: Introduction to Predictive Modeling
-#     chapters:
-#     - file: regression_intro
-#     - file: practice_regression
+  - caption: Introduction to Predictive Modeling
+    chapters:
+    - file: regression_intro
+    - file: practice_regression
 #     - file: polynomial_models
 #     - file: knn_crossval
 # #     - file: knn_classification
