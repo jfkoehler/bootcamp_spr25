@@ -22,6 +22,7 @@ parts:
     - file: practice_regression
     - file: polynomial_models
     - file: knn_crossval
+    
 # #     - file: knn_classification
 #     - file: logistic_starter_code
 #     - file: classifier_evaluation_b
