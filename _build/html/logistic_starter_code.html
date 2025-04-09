@@ -65,6 +65,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'logistic_starter_code';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Evaluating Classification Models" href="classifier_evaluation_b.html" />
+    <link rel="prev" title="Cross Validation and K-Nearest Neighbors" href="knn_crossval.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,8 +117,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -195,7 +195,7 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Predictive Modeling</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="regression_intro.html">Introduction to Linear Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="practice_regression.html">Regression Part II</a></li>
 
@@ -205,6 +205,17 @@
 <li class="toctree-l1"><a class="reference internal" href="knn_crossval.html">Cross Validation and K-Nearest Neighbors</a></li>
 
 
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classification vs. Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classifier_evaluation_b.html">Evaluating Classification Models</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="intro_decision_tree.html">Introduction to Decision Trees</a></li>
 
 
 </ul>
@@ -726,7 +737,7 @@ memory usage: 390.6+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;balance&#39;, ylabel=&#39;binary_default&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/c4e1a84ea8a3f7cb175204f27c62b4fcad50db515136d0acb9ab968291857777.png" src="_images/c4e1a84ea8a3f7cb175204f27c62b4fcad50db515136d0acb9ab968291857777.png" />
+<img alt="_images/c12a6e3f9952b9bf9f3f522f399898f1bfdb3fc416278f220f915cb5a4b9d99f.png" src="_images/c12a6e3f9952b9bf9f3f522f399898f1bfdb3fc416278f220f915cb5a4b9d99f.png" />
 </div>
 </div>
 </section>
@@ -759,7 +770,7 @@ memory usage: 390.6+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1402106b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x135bd4680&gt;]
 </pre></div>
 </div>
 <img alt="_images/5d648b1c9e19cbfbf2b39191de9549ab43983de42c8fd26016e2146eb10dbce9.png" src="_images/5d648b1c9e19cbfbf2b39191de9549ab43983de42c8fd26016e2146eb10dbce9.png" />
@@ -1262,7 +1273,7 @@ Name: proportion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay at 0x13ff8caa0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay at 0x135ac8050&gt;
 </pre></div>
 </div>
 <img alt="_images/b8e3a7a971f75e246e76aa95e0bc1fd919d3550e421e535f1c5abcbd122e08c4.png" src="_images/b8e3a7a971f75e246e76aa95e0bc1fd919d3550e421e535f1c5abcbd122e08c4.png" />
@@ -2097,8 +2108,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">-------------------------------------------------------</span>
-<span class="ne">IndexError</span><span class="g g-Whitespace">            </span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
 <span class="nn">File /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/sklearn/utils/_available_if.py:29,</span> in <span class="ni">_AvailableIfDescriptor._check</span><span class="nt">(self, obj, owner)</span>
 <span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="k">try</span><span class="p">:</span>
 <span class="ne">---&gt; </span><span class="mi">29</span>     <span class="n">check_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
@@ -2119,7 +2130,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
 
-<span class="ne">AttributeError</span><span class="g g-Whitespace">        </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">59</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># score on train and test</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Train Score: </span><span class="si">{</span><span class="n">pipe</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="w"> </span><span class="n">y_train</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -2475,6 +2486,24 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="knn_crossval.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Cross Validation and K-Nearest Neighbors</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="classifier_evaluation_b.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Evaluating Classification Models</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
