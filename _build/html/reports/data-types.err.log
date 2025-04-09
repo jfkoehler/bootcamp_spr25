@@ -22,8 +22,8 @@ names
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;31m-------------------------------------------------------[0m
+[0;31mNameError[0m             Traceback (most recent call last)
 Cell [0;32mIn[29], line 1[0m
 [0;32m----> 1[0m [43mnames[49m
 

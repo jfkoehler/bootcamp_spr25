@@ -24,11 +24,12 @@ parts:
     - file: knn_crossval
     
 # #     - file: knn_classification
-#     - file: logistic_starter_code
-#     - file: classifier_evaluation_b
+    - file: logistic_starter_code
+    - file: classifier_evaluation_b
+    - file: intro_decision_tree 
 # #     - file: transformers_pipelines_review
 # #     - file: cross_val_and_grid_searching
-#     - file: intro_decision_tree  
+     
 #     - file: forests
 # #   - caption: Advanced Models
 # #     chapters:

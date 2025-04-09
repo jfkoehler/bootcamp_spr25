@@ -23,8 +23,8 @@ plt.boxplot(tips['tip_pct']);
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;31m-------------------------------------------------------[0m
+[0;31mTypeError[0m             Traceback (most recent call last)
 Cell [0;32mIn[37], line 2[0m
 [1;32m      1[0m [38;5;66;03m### boxplot of tip percentage[39;00m
 [0;32m----> 2[0m [43mplt[49m[38;5;241;43m.[39;49m[43mboxplot[49m[43m([49m[43mtips[49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mtip_pct[39;49m[38;5;124;43m'[39;49m[43m][49m[43m)[49m;

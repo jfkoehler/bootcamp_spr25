@@ -25,8 +25,8 @@ print(location.address)
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mAttributeError[0m                            Traceback (most recent call last)
+[0;31m-------------------------------------------------------[0m
+[0;31mAttributeError[0m        Traceback (most recent call last)
 Cell [0;32mIn[6], line 4[0m
 [1;32m      2[0m geolocator [38;5;241m=[39m Nominatim(user_agent[38;5;241m=[39m[38;5;124m"[39m[38;5;124mnyu_bootcamp[39m[38;5;124m"[39m)
 [1;32m      3[0m location [38;5;241m=[39m geolocator[38;5;241m.[39mgeocode([38;5;124m"[39m[38;5;124m"[39m)
