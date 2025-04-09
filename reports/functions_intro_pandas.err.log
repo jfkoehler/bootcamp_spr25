@@ -22,8 +22,8 @@ jacobs_account.balance
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mAttributeError[0m                            Traceback (most recent call last)
+[0;31m-------------------------------------------------------[0m
+[0;31mAttributeError[0m        Traceback (most recent call last)
 Cell [0;32mIn[12], line 1[0m
 [0;32m----> 1[0m [43mjacobs_account[49m[38;5;241;43m.[39;49m[43mbalance[49m
 

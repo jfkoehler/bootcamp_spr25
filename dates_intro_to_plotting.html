@@ -181,6 +181,30 @@
 <li class="toctree-l1"><a class="reference internal" href="pandas_II.html">Reading Files and Split Apply Combine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro_to_plotting.html"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eda_consulting.html">Retail Consultant Challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting_seaborn.html">More plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="data_apis.html">Accessing Data with API’s</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="html_data.html">Extracting Data From HTML</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Predictive Modeling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="regression_intro.html">Introduction to Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice_regression.html">Regression Part II</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="polynomial_models.html">Model Complexity and Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="knn_crossval.html">Cross Validation and K-Nearest Neighbors</a></li>
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercises</span></p>
 <ul class="nav bd-sidenav">
@@ -193,6 +217,12 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="homeworks/homework_I.html">Assignment 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homeworks/homework_III.html">Homework 3: Advanced Pandas and Introductory Plotting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra Problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Bonus_Plotting_with_bokeh.html">Plotting with <code class="docutils literal notranslate"><span class="pre">bokeh</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_ipywidgets.html">Using interactive widgets with the notebook</a></li>
 </ul>
 
     </div>
@@ -491,7 +521,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/jacobkoehler/Desktop/spring_25/bootcamp&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/jacobkoehler/Desktop/spring_25/bootcamp_spr25&#39;
 </pre></div>
 </div>
 </div>
@@ -504,26 +534,39 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;intro_to_plotting.ipynb&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;classifier_evaluation_b.ipynb&#39;,
+ &#39;practice_regression.ipynb&#39;,
+ &#39;polynomial_models.ipynb&#39;,
+ &#39;intro_to_plotting.ipynb&#39;,
  &#39;iteration.ipynb&#39;,
  &#39;eda_consulting.ipynb&#39;,
  &#39;imgs&#39;,
+ &#39;html_data.ipynb&#39;,
  &#39;images&#39;,
  &#39;data-types.ipynb&#39;,
+ &#39;homework_IV.ipynb&#39;,
  &#39;oop.ipynb&#39;,
+ &#39;intro_ipywidgets.ipynb&#39;,
+ &#39;intro_decision_tree.ipynb&#39;,
  &#39;dates_intro_to_plotting.ipynb&#39;,
  &#39;functions.ipynb&#39;,
  &#39;_toc.yml&#39;,
+ &#39;folium_exs-clean.ipynb&#39;,
  &#39;logo.png&#39;,
  &#39;exercises&#39;,
+ &#39;data_apis.ipynb&#39;,
  &#39;functions_intro_pandas.ipynb&#39;,
  &#39;_build&#39;,
  &#39;_config.yml&#39;,
+ &#39;logistic_starter_code.ipynb&#39;,
  &#39;homeworks&#39;,
+ &#39;regression_intro.ipynb&#39;,
  &#39;.ipynb_checkpoints&#39;,
+ &#39;knn_crossval.ipynb&#39;,
  &#39;syllabus.ipynb&#39;,
  &#39;.git&#39;,
  &#39;plotting_seaborn.ipynb&#39;,
+ &#39;Bonus_Plotting_with_bokeh.ipynb&#39;,
  &#39;data&#39;,
  &#39;pandas_II.ipynb&#39;]
 </pre></div>
@@ -538,12 +581,19 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sales_over_time.csv&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chicago_crimes.csv&#39;,
+ &#39;sales_over_time.csv&#39;,
  &#39;drinks.csv&#39;,
  &#39;diamonds.csv&#39;,
+ &#39;eda_case_data&#39;,
  &#39;product_sales.csv&#39;,
+ &#39;Credit.csv&#39;,
  &#39;ufo.csv&#39;,
- &#39;churn_missing.csv&#39;]
+ &#39;churn_missing.csv&#39;,
+ &#39;mtcars.csv&#39;,
+ &#39;spotify.csv&#39;,
+ &#39;cell_phone_churn.csv&#39;,
+ &#39;gapminder.csv&#39;]
 </pre></div>
 </div>
 </div>
@@ -1805,57 +1855,57 @@ Name: vmail_message, dtype: float64
       <th>0</th>
       <td>foo</td>
       <td>one</td>
-      <td>-0.701545</td>
-      <td>-0.242949</td>
+      <td>0.988502</td>
+      <td>-1.210508</td>
     </tr>
     <tr>
       <th>1</th>
       <td>bar</td>
       <td>one</td>
-      <td>-0.388868</td>
-      <td>-0.016644</td>
+      <td>-1.934857</td>
+      <td>-2.770732</td>
     </tr>
     <tr>
       <th>2</th>
       <td>foo</td>
       <td>two</td>
-      <td>-0.935567</td>
-      <td>0.356764</td>
+      <td>0.010856</td>
+      <td>-0.103383</td>
     </tr>
     <tr>
       <th>3</th>
       <td>bar</td>
       <td>three</td>
-      <td>0.844128</td>
-      <td>1.877235</td>
+      <td>-1.422082</td>
+      <td>-0.457443</td>
     </tr>
     <tr>
       <th>4</th>
       <td>foo</td>
       <td>two</td>
-      <td>0.039322</td>
-      <td>0.416928</td>
+      <td>-0.639986</td>
+      <td>0.728157</td>
     </tr>
     <tr>
       <th>5</th>
       <td>bar</td>
       <td>two</td>
-      <td>2.064674</td>
-      <td>-0.478726</td>
+      <td>0.865947</td>
+      <td>0.939149</td>
     </tr>
     <tr>
       <th>6</th>
       <td>foo</td>
       <td>one</td>
-      <td>0.337266</td>
-      <td>-1.182396</td>
+      <td>-0.797456</td>
+      <td>-0.776405</td>
     </tr>
     <tr>
       <th>7</th>
       <td>foo</td>
       <td>three</td>
-      <td>0.662326</td>
-      <td>0.373914</td>
+      <td>0.463824</td>
+      <td>-0.200696</td>
     </tr>
   </tbody>
 </table>
@@ -1870,8 +1920,8 @@ Name: vmail_message, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A
-bar    0.839978
-foo   -0.119640
+bar   -0.830331
+foo    0.005148
 Name: C, dtype: float64
 </pre></div>
 </div>
@@ -1915,18 +1965,18 @@ Name: C, dtype: float64
   <tbody>
     <tr>
       <th>one</th>
-      <td>-0.251049</td>
-      <td>-0.480663</td>
+      <td>-0.581271</td>
+      <td>-1.585882</td>
     </tr>
     <tr>
       <th>three</th>
-      <td>0.753227</td>
-      <td>1.125575</td>
+      <td>-0.479129</td>
+      <td>-0.329070</td>
     </tr>
     <tr>
       <th>two</th>
-      <td>0.389476</td>
-      <td>0.098322</td>
+      <td>0.078939</td>
+      <td>0.521308</td>
     </tr>
   </tbody>
 </table>
@@ -1973,34 +2023,34 @@ Name: C, dtype: float64
     <tr>
       <th rowspan="3" valign="top">bar</th>
       <th>one</th>
-      <td>-0.388868</td>
-      <td>-0.016644</td>
+      <td>-1.934857</td>
+      <td>-2.770732</td>
     </tr>
     <tr>
       <th>three</th>
-      <td>0.844128</td>
-      <td>1.877235</td>
+      <td>-1.422082</td>
+      <td>-0.457443</td>
     </tr>
     <tr>
       <th>two</th>
-      <td>2.064674</td>
-      <td>-0.478726</td>
+      <td>0.865947</td>
+      <td>0.939149</td>
     </tr>
     <tr>
       <th rowspan="3" valign="top">foo</th>
       <th>one</th>
-      <td>-0.182139</td>
-      <td>-0.712672</td>
+      <td>0.095523</td>
+      <td>-0.993457</td>
     </tr>
     <tr>
       <th>three</th>
-      <td>0.662326</td>
-      <td>0.373914</td>
+      <td>0.463824</td>
+      <td>-0.200696</td>
     </tr>
     <tr>
       <th>two</th>
-      <td>-0.448123</td>
-      <td>0.386846</td>
+      <td>-0.314565</td>
+      <td>0.312387</td>
     </tr>
   </tbody>
 </table>
@@ -2043,43 +2093,43 @@ Name: C, dtype: float64
       <th>0</th>
       <td>bar</td>
       <td>one</td>
-      <td>-0.388868</td>
-      <td>-0.016644</td>
+      <td>-1.934857</td>
+      <td>-2.770732</td>
     </tr>
     <tr>
       <th>1</th>
       <td>bar</td>
       <td>three</td>
-      <td>0.844128</td>
-      <td>1.877235</td>
+      <td>-1.422082</td>
+      <td>-0.457443</td>
     </tr>
     <tr>
       <th>2</th>
       <td>bar</td>
       <td>two</td>
-      <td>2.064674</td>
-      <td>-0.478726</td>
+      <td>0.865947</td>
+      <td>0.939149</td>
     </tr>
     <tr>
       <th>3</th>
       <td>foo</td>
       <td>one</td>
-      <td>-0.182139</td>
-      <td>-0.712672</td>
+      <td>0.095523</td>
+      <td>-0.993457</td>
     </tr>
     <tr>
       <th>4</th>
       <td>foo</td>
       <td>three</td>
-      <td>0.662326</td>
-      <td>0.373914</td>
+      <td>0.463824</td>
+      <td>-0.200696</td>
     </tr>
     <tr>
       <th>5</th>
       <td>foo</td>
       <td>two</td>
-      <td>-0.448123</td>
-      <td>0.386846</td>
+      <td>-0.314565</td>
+      <td>0.312387</td>
     </tr>
   </tbody>
 </table>
@@ -2210,7 +2260,7 @@ Name: C, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_7760/2919508398.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_30315/2919508398.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   tips.groupby(&#39;smoker&#39;)[&#39;tip&#39;].mean()
 </pre></div>
 </div>
@@ -2232,7 +2282,7 @@ Name: tip, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_7760/1203280366.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_30315/1203280366.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   tips.groupby([&#39;day&#39;, &#39;time&#39;])[&#39;total_bill&#39;].mean()
 </pre></div>
 </div>
@@ -2284,8 +2334,8 @@ Name: total_bill, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">-------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">     </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">47</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># read in the AAPL data</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">aapl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/AAPL.csv&#39;</span><span class="p">)</span>

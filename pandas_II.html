@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'pandas_II';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Exercise 1: Loud Animals" href="exercises/exercises-class_1.html" />
+    <link rel="next" title="datetime, and matplotlib intro" href="intro_to_plotting.html" />
     <link rel="prev" title="Functions" href="functions_intro_pandas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -179,6 +179,32 @@
 <li class="toctree-l1"><a class="reference internal" href="functions_intro_pandas.html">Functions</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Reading Files and Split Apply Combine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_plotting.html"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eda_consulting.html">Retail Consultant Challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting_seaborn.html">More plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="data_apis.html">Accessing Data with API’s</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="html_data.html">Extracting Data From HTML</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Predictive Modeling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="regression_intro.html">Introduction to Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice_regression.html">Regression Part II</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="polynomial_models.html">Model Complexity and Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="knn_crossval.html">Cross Validation and K-Nearest Neighbors</a></li>
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercises</span></p>
 <ul class="nav bd-sidenav">
@@ -191,6 +217,12 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="homeworks/homework_I.html">Assignment 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homeworks/homework_III.html">Homework 3: Advanced Pandas and Introductory Plotting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra Problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Bonus_Plotting_with_bokeh.html">Plotting with <code class="docutils literal notranslate"><span class="pre">bokeh</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_ipywidgets.html">Using interactive widgets with the notebook</a></li>
 </ul>
 
     </div>
@@ -489,7 +521,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/jacobkoehler/Desktop/spring_25/bootcamp&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/jacobkoehler/Desktop/spring_25/bootcamp_spr25&#39;
 </pre></div>
 </div>
 </div>
@@ -502,22 +534,39 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;iteration.ipynb&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;classifier_evaluation_b.ipynb&#39;,
+ &#39;practice_regression.ipynb&#39;,
+ &#39;polynomial_models.ipynb&#39;,
+ &#39;intro_to_plotting.ipynb&#39;,
+ &#39;iteration.ipynb&#39;,
+ &#39;eda_consulting.ipynb&#39;,
  &#39;imgs&#39;,
+ &#39;html_data.ipynb&#39;,
  &#39;images&#39;,
  &#39;data-types.ipynb&#39;,
+ &#39;homework_IV.ipynb&#39;,
  &#39;oop.ipynb&#39;,
+ &#39;intro_ipywidgets.ipynb&#39;,
+ &#39;intro_decision_tree.ipynb&#39;,
+ &#39;dates_intro_to_plotting.ipynb&#39;,
  &#39;functions.ipynb&#39;,
  &#39;_toc.yml&#39;,
+ &#39;folium_exs-clean.ipynb&#39;,
  &#39;logo.png&#39;,
  &#39;exercises&#39;,
+ &#39;data_apis.ipynb&#39;,
  &#39;functions_intro_pandas.ipynb&#39;,
  &#39;_build&#39;,
  &#39;_config.yml&#39;,
+ &#39;logistic_starter_code.ipynb&#39;,
  &#39;homeworks&#39;,
+ &#39;regression_intro.ipynb&#39;,
  &#39;.ipynb_checkpoints&#39;,
+ &#39;knn_crossval.ipynb&#39;,
  &#39;syllabus.ipynb&#39;,
  &#39;.git&#39;,
+ &#39;plotting_seaborn.ipynb&#39;,
+ &#39;Bonus_Plotting_with_bokeh.ipynb&#39;,
  &#39;data&#39;,
  &#39;pandas_II.ipynb&#39;]
 </pre></div>
@@ -745,57 +794,57 @@
       <th>0</th>
       <td>foo</td>
       <td>one</td>
-      <td>1.702509</td>
-      <td>-1.198291</td>
+      <td>-0.364849</td>
+      <td>-0.114791</td>
     </tr>
     <tr>
       <th>1</th>
       <td>bar</td>
       <td>one</td>
-      <td>0.658011</td>
-      <td>-0.930487</td>
+      <td>1.461725</td>
+      <td>-0.376533</td>
     </tr>
     <tr>
       <th>2</th>
       <td>foo</td>
       <td>two</td>
-      <td>0.187764</td>
-      <td>0.922044</td>
+      <td>-0.317835</td>
+      <td>-0.286330</td>
     </tr>
     <tr>
       <th>3</th>
       <td>bar</td>
       <td>three</td>
-      <td>-0.467764</td>
-      <td>-1.834566</td>
+      <td>-0.524314</td>
+      <td>-0.536285</td>
     </tr>
     <tr>
       <th>4</th>
       <td>foo</td>
       <td>two</td>
-      <td>-1.426913</td>
-      <td>-1.548374</td>
+      <td>0.408718</td>
+      <td>-0.245425</td>
     </tr>
     <tr>
       <th>5</th>
       <td>bar</td>
       <td>two</td>
-      <td>0.432917</td>
-      <td>-0.902637</td>
+      <td>-1.262950</td>
+      <td>-0.267023</td>
     </tr>
     <tr>
       <th>6</th>
       <td>foo</td>
       <td>one</td>
-      <td>0.469912</td>
-      <td>1.838111</td>
+      <td>-1.188408</td>
+      <td>0.994888</td>
     </tr>
     <tr>
       <th>7</th>
       <td>foo</td>
       <td>three</td>
-      <td>3.284338</td>
-      <td>-0.007569</td>
+      <td>-0.263019</td>
+      <td>-0.283699</td>
     </tr>
   </tbody>
 </table>
@@ -1228,11 +1277,11 @@ memory usage: 12.9+ KB
       </div>
     </a>
     <a class="right-next"
-       href="exercises/exercises-class_1.html"
+       href="intro_to_plotting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercise 1: Loud Animals</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

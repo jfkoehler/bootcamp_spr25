@@ -24,8 +24,8 @@ aapl.head()
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;31m-------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m     Traceback (most recent call last)
 Cell [0;32mIn[47], line 2[0m
 [1;32m      1[0m [38;5;66;03m# read in the AAPL data[39;00m
 [0;32m----> 2[0m aapl [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_csv[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mdata/AAPL.csv[39;49m[38;5;124;43m'[39;49m[43m)[49m

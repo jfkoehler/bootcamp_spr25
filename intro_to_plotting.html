@@ -181,6 +181,30 @@
 <li class="toctree-l1"><a class="reference internal" href="pandas_II.html">Reading Files and Split Apply Combine</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eda_consulting.html">Retail Consultant Challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting_seaborn.html">More plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="data_apis.html">Accessing Data with API’s</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="html_data.html">Extracting Data From HTML</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Predictive Modeling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="regression_intro.html">Introduction to Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice_regression.html">Regression Part II</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="polynomial_models.html">Model Complexity and Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="knn_crossval.html">Cross Validation and K-Nearest Neighbors</a></li>
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercises</span></p>
 <ul class="nav bd-sidenav">
@@ -193,6 +217,12 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="homeworks/homework_I.html">Assignment 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homeworks/homework_III.html">Homework 3: Advanced Pandas and Introductory Plotting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra Problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Bonus_Plotting_with_bokeh.html">Plotting with <code class="docutils literal notranslate"><span class="pre">bokeh</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_ipywidgets.html">Using interactive widgets with the notebook</a></li>
 </ul>
 
     </div>
@@ -552,7 +582,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 2, 12, 16, 19, 3, 742518)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 4, 9, 15, 54, 9, 153586)
 </pre></div>
 </div>
 </div>
@@ -565,7 +595,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.timedelta(microseconds=8157)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.timedelta(microseconds=7573)
 </pre></div>
 </div>
 </div>
@@ -592,7 +622,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 2, 19, 16, 19, 3, 761318)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2025, 4, 16, 15, 54, 9, 171109)
 </pre></div>
 </div>
 </div>
@@ -744,7 +774,7 @@ memory usage: 10.1 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_7860/3412779598.py:2: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_30392/3412779598.py:2: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
   dow.resample(&#39;M&#39;).mean()
 </pre></div>
 </div>
@@ -831,7 +861,7 @@ memory usage: 10.1 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_7860/2439399997.py:2: FutureWarning: &#39;Q&#39; is deprecated and will be removed in a future version, please use &#39;QE&#39; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_30392/2439399997.py:2: FutureWarning: &#39;Q&#39; is deprecated and will be removed in a future version, please use &#39;QE&#39; instead.
   dow.resample(&#39;Q&#39;).max()
 </pre></div>
 </div>
@@ -1074,7 +1104,7 @@ memory usage: 7.4 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12bd0b410&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1327cb650&gt;]
 </pre></div>
 </div>
 <img alt="_images/3b9bdaaf100446cb1b49ad733c921c53f73dded0a7726d019daff8c69c7e331a.png" src="_images/3b9bdaaf100446cb1b49ad733c921c53f73dded0a7726d019daff8c69c7e331a.png" />
@@ -1102,7 +1132,7 @@ memory usage: 7.4 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13d5db050&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x132962990&gt;]
 </pre></div>
 </div>
 <img alt="_images/3a6fb4b8b4eabe3d950f1dd454ac71454388752b892c4825ca019c121074b74e.png" src="_images/3a6fb4b8b4eabe3d950f1dd454ac71454388752b892c4825ca019c121074b74e.png" />
@@ -1211,8 +1241,8 @@ memory usage: 7.4 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">-------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">             </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">37</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">### boxplot of tip percentage</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">tips</span><span class="p">[</span><span class="s1">&#39;tip_pct&#39;</span><span class="p">]);</span>

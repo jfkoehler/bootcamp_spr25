@@ -65,7 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'polynomial_models';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Exercise 1: Loud Animals" href="exercises/exercises-class_1.html" />
+    <link rel="next" title="Cross Validation and K-Nearest Neighbors" href="knn_crossval.html" />
     <link rel="prev" title="Regression Part II" href="practice_regression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -202,6 +202,11 @@
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Model Complexity and Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="knn_crossval.html">Cross Validation and K-Nearest Neighbors</a></li>
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercises</span></p>
 <ul class="nav bd-sidenav">
@@ -601,7 +606,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x13c33e630&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x132cfd4f0&gt;
 </pre></div>
 </div>
 <img alt="_images/bcdc827f6de100833a92daaadf71b6001a999ccd51fd701370aedcd378e31912.png" src="_images/bcdc827f6de100833a92daaadf71b6001a999ccd51fd701370aedcd378e31912.png" />
@@ -645,7 +650,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13ca17cb0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x133313da0&gt;]
 </pre></div>
 </div>
 <img alt="_images/2afa8b9fb97f57b7168291502d57911d4381090cefbdbd600fd4a573e3c32eab.png" src="_images/2afa8b9fb97f57b7168291502d57911d4381090cefbdbd600fd4a573e3c32eab.png" />
@@ -728,7 +733,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_9673/1230039856.py:2: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8v/7bhy8yqn04b7rzqglb2s38200000gn/T/ipykernel_30434/1230039856.py:2: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -818,7 +823,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x13caefbc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1333ebaa0&gt;
 </pre></div>
 </div>
 <img alt="_images/3cf238fc2986cbd793c57c38698b37ffdbf3944f2de5fc6a0683f85dce3ec029.png" src="_images/3cf238fc2986cbd793c57c38698b37ffdbf3944f2de5fc6a0683f85dce3ec029.png" />
@@ -859,8 +864,8 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">-------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">   </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
@@ -1523,11 +1528,11 @@ Test MSE: 9191706.393489875
       </div>
     </a>
     <a class="right-next"
-       href="exercises/exercises-class_1.html"
+       href="knn_crossval.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercise 1: Loud Animals</p>
+        <p class="prev-next-title">Cross Validation and K-Nearest Neighbors</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
