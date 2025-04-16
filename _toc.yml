@@ -34,7 +34,7 @@ parts:
 # #   - caption: Advanced Models
 # #     chapters:
 # #     - file: advanced_models
-# #     - file: nlp-starter
+    - file: nlp-starter-clean
 #   - caption: Time Series Models
 #     chapters:
 #     - file: time_series_I
