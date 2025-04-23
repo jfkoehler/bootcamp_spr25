@@ -35,6 +35,7 @@ parts:
 # #     chapters:
 # #     - file: advanced_models
     - file: nlp-starter-clean
+    - file: into_to_ann
 #   - caption: Time Series Models
 #     chapters:
 #     - file: time_series_I
