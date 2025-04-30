@@ -22,24 +22,20 @@ parts:
     - file: practice_regression
     - file: polynomial_models
     - file: knn_crossval
-    
-# #     - file: knn_classification
     - file: logistic_starter_code
     - file: classifier_evaluation_b
     - file: intro_decision_tree 
-# #     - file: transformers_pipelines_review
-# #     - file: cross_val_and_grid_searching
-     
-#     - file: forests
-# #   - caption: Advanced Models
-# #     chapters:
-# #     - file: advanced_models
+  - caption: Advanced Models
+    chapters:
     - file: nlp-starter-clean
     - file: into_to_ann
-#   - caption: Time Series Models
-#     chapters:
-#     - file: time_series_I
-#     - file: forecasting_I
+  - caption: Time Series Models
+    chapters:
+    - file: forecasting_I
+  - caption: Model Deployment
+    chapters:
+    - file: intro_to_git_and_github
+    - file: streamlit
 # #     - file: arima_models
 # #     - file: intro_ann
 # #     - file: cnn_intro_pytorch_clean
