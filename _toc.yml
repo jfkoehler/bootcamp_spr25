@@ -29,6 +29,7 @@ parts:
     chapters:
     - file: nlp-starter-clean
     - file: into_to_ann
+    - file: conv_pretrained
   - caption: Time Series Models
     chapters:
     - file: forecasting_I
